@@ -1,1 +1,1 @@
-include ':cutils'
+include ':cutils', ':demo'
