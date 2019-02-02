@@ -8,7 +8,7 @@ import java.net.URL
 /**
  * Created by Carlos on 2018/11/30.
  */
-internal class NetUtils {
+class NetUtils {
 
     fun get(url: String) {
         try {
