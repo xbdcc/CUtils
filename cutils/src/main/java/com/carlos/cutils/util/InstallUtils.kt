@@ -11,7 +11,7 @@ import java.io.File
  * 安装APK工具类
  * Created by Carlos on 2018/11/14.
  */
-internal object InstallUtils {
+object InstallUtils {
 
     fun install(context: Context, apkPath: String) {
         val intent = Intent(Intent.ACTION_VIEW)
