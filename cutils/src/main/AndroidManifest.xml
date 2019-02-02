@@ -1,2 +1,21 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.carlos.cutils"/>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
+          package="com.carlos.cutils">
+    <application
+            android:allowBackup="true"
+            android:label="@string/app_name"
+            android:supportsRtl="true"
+    >
+        <provider
+                android:name="android.support.v4.content.FileProvider"
+                android:authorities="${applicationId}.fileProvider"
+                android:exported="false"
+                android:grantUriPermissions="true"
+                tools:replace="android:authorities">
+            <meta-data
+                    android:name="android.support.FILE_PROVIDER_PATHS"
+                    android:resource="@xml/download"
+                    tools:replace="android:resource" />
+        </provider>
+
+    </application>
+</manifest>
