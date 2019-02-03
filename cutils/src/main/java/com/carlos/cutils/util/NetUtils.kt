@@ -10,7 +10,7 @@ import java.net.URL
  */
 class NetUtils {
 
-    fun get(url: String) {
+    fun get(url: String) : String{
         try {
             val url = URL(url)
             val httpURLConnection = url.openConnection()
@@ -25,9 +25,11 @@ class NetUtils {
                 resultData += inputLine
                 inputLine = bufferedReader.readLine()
             }
+            return resultData
 //            Log.i("Http通信之HttpURLConnection", "get方法\n" + resultData);
         }catch (e: Exception) {
             e.printStackTrace()
+            return ""
         }
     }
 
@@ -105,7 +107,7 @@ class NetUtils {
             else if (code == 416) {
                 handler.sendEmptyMessage(100)
             }else
-                handler.sendEmptyMessage(0)
+                handler.sendEmptyMessage(-1)
         }catch (e: Exception) {
             handler.sendEmptyMessage(-1)
         }
