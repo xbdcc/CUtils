@@ -21,19 +21,22 @@ class MainActivity : CBaseActivity() {
 
     fun click(view: View) {
 
+        showToast("test")
         requestPermission()
 
-        if(!isHasPermission()) {
+        if (!isHasPermission()) {
             showToast("Please get permission first!")
             return
         }
+
     }
 
     private fun showToast(text: String) {
         ToastUtil.Builder(this@MainActivity).setText(text).build()
     }
 
-    private fun isHasPermission() = isHasPermission(Manifest.permission.READ_PHONE_STATE) && isHasPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE)
+    private fun isHasPermission() =
+        isHasPermission(Manifest.permission.RECORD_AUDIO) && isHasPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE)
 
     private fun requestPermission() {
         requestPermission(300, object : PermissionListener {
@@ -44,6 +47,6 @@ class MainActivity : CBaseActivity() {
 
             }
 
-        }, Manifest.permission.READ_PHONE_STATE, Manifest.permission.WRITE_EXTERNAL_STORAGE)
+        }, Manifest.permission.RECORD_AUDIO, Manifest.permission.WRITE_EXTERNAL_STORAGE)
     }
 }

@@ -12,7 +12,7 @@
             android:supportsRtl="true"
     >
         <provider
-                android:name="android.support.v4.content.FileProvider"
+                android:name="androidx.core.content.FileProvider"
                 android:authorities="${applicationId}.fileProvider"
                 android:exported="false"
                 android:grantUriPermissions="true"
@@ -20,7 +20,7 @@
             <meta-data
                     android:name="android.support.FILE_PROVIDER_PATHS"
                     android:resource="@xml/download"
-                    tools:replace="android:resource" />
+                    tools:replace="android:resource"/>
         </provider>
 
     </application>

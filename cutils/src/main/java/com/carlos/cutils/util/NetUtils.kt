@@ -10,24 +10,24 @@ import java.net.URL
  */
 class NetUtils {
 
-    fun get(url: String) : String{
+    fun get(url: String): String {
         try {
             val url = URL(url)
             val httpURLConnection = url.openConnection()
-            httpURLConnection.connectTimeout = 10*1000
+            httpURLConnection.connectTimeout = 10 * 1000
             httpURLConnection.connect()
             // 通过InputStreamReader读取流，设置编码防止中文乱码
             val inputStreamReader = InputStreamReader(httpURLConnection.getInputStream(), "GBK")
             val bufferedReader = BufferedReader(inputStreamReader)
             var resultData = ""
             var inputLine = bufferedReader.readLine()
-            while(inputLine!=null) {
+            while (inputLine != null) {
                 resultData += inputLine
                 inputLine = bufferedReader.readLine()
             }
             return resultData
 //            Log.i("Http通信之HttpURLConnection", "get方法\n" + resultData);
-        }catch (e: Exception) {
+        } catch (e: Exception) {
             e.printStackTrace()
             return ""
         }
@@ -51,23 +51,23 @@ class NetUtils {
             val bufferedReader = BufferedReader(inputStreamReader)
             val stringBuffer = StringBuffer()
             var temp = bufferedReader.readLine()
-            while(temp!=null) {
+            while (temp != null) {
                 stringBuffer.append(temp)
                 temp = bufferedReader.readLine()
             }
             bufferedReader.close()
             inputStreamReader.close()
             httpURLConnection.disconnect()
-            LogUtils.d("test:" + stringBuffer.toString())
+            LogUtils.d("test:$stringBuffer")
             return stringBuffer.toString()
-        }catch (e: Exception) {
-            LogUtils.d("error",e)
+        } catch (e: Exception) {
+            LogUtils.d("error", e)
             e.printStackTrace()
             return ""
         }
     }
 
-    fun download(url: String, filePath: String,handler: Handler) {
+    fun download(url: String, filePath: String, handler: Handler) {
         try {
             val file = File(filePath)
             LogUtils.d("filePath:" + file.path)
@@ -94,21 +94,20 @@ class NetUtils {
                 val buffer = ByteArray(102400)
                 var readByte = inputStream.read(buffer)
 
-                while (readByte!=-1) {
+                while (readByte != -1) {
                     fileOutputStream.write(buffer, 0, readByte)
                     hasDownSize += readByte
                     readByte = inputStream.read(buffer)
 
-                    val percent = hasDownSize * 100.0f/ totoalSize
+                    val percent = hasDownSize * 100.0f / totoalSize
                     handler.sendEmptyMessage(percent.toInt())
                     LogUtils.d("percent:$percent----down:$hasDownSize---total:$totoalSize")
                 }
-            }
-            else if (code == 416) {
+            } else if (code == 416) {
                 handler.sendEmptyMessage(100)
-            }else
+            } else
                 handler.sendEmptyMessage(-1)
-        }catch (e: Exception) {
+        } catch (e: Exception) {
             handler.sendEmptyMessage(-1)
         }
 
