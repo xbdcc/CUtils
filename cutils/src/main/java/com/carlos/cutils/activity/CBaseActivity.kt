@@ -20,7 +20,11 @@ open class CBaseActivity : AppCompatActivity() {
     /**
      * Request permission.
      */
-    fun requestPermission(requestCode: Int, permissionListener: PermissionListener, vararg permissions: String) {
+    fun requestPermission(
+        requestCode: Int,
+        permissionListener: PermissionListener,
+        vararg permissions: String
+    ) {
         mRequestCode = requestCode
         mPermissionListener = permissionListener
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
@@ -42,7 +46,11 @@ open class CBaseActivity : AppCompatActivity() {
     fun isHasPermission(permission: String) =
         ContextCompat.checkSelfPermission(this, permission) != PackageManager.PERMISSION_DENIED
 
-    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<String>, grantResults: IntArray) {
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<String>,
+        grantResults: IntArray
+    ) {
         if (mRequestCode == requestCode) {
             if (verifyPermiisssions(grantResults))
                 mPermissionListener.permissionSuccess()
@@ -59,7 +67,11 @@ open class CBaseActivity : AppCompatActivity() {
     private fun getDeniedPermissions(vararg requestPermissions: String): List<String> {
         val permissions = ArrayList<String>()
         for (requestPermission in requestPermissions) {
-            if (ContextCompat.checkSelfPermission(this, requestPermission) == PackageManager.PERMISSION_DENIED)
+            if (ContextCompat.checkSelfPermission(
+                    this,
+                    requestPermission
+                ) == PackageManager.PERMISSION_DENIED
+            )
                 permissions.add(requestPermission)
         }
         return permissions
