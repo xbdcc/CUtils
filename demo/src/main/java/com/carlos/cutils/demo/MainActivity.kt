@@ -5,6 +5,8 @@ import android.os.Bundle
 import android.view.View
 import com.carlos.cutils.activity.CBaseActivity
 import com.carlos.cutils.listener.PermissionListener
+import com.carlos.cutils.thirdparty.AlipayReward
+import com.carlos.cutils.thirdparty.WechatReward
 import com.carlos.cutils.util.LogUtils
 import com.carlos.cutils.util.ToastUtil
 
@@ -29,6 +31,14 @@ class MainActivity : CBaseActivity() {
             return
         }
 
+    }
+
+    fun alipayReward(view: View) {
+        AlipayReward(this)
+    }
+
+    fun wechatReward(view: View) {
+        WechatReward(this)
     }
 
     private fun showToast(text: String) {
