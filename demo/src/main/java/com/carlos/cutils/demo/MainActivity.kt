@@ -3,7 +3,7 @@ package com.carlos.cutils.demo
 import android.Manifest
 import android.os.Bundle
 import android.view.View
-import com.carlos.cutils.activity.CBaseActivity
+import com.carlos.cutils.base.CBaseActivity
 import com.carlos.cutils.listener.PermissionListener
 import com.carlos.cutils.thirdparty.AlipayReward
 import com.carlos.cutils.thirdparty.WechatReward
