@@ -7,37 +7,37 @@ import android.content.SharedPreferences
  * Created by Carlos on 2019/2/21.
  * Same proccess to use.
  */
-open class CBasePreferences(private val fileName: String) {
+open class CBasePreferences(private val fileName: String, private val cContext: Context) {
 
-    open fun setString(context: Context, key: String, value: String) {
+    open fun setString(key: String, value: String, context: Context = cContext) {
         getEditor(context).putString(key, value).apply()
     }
 
-    open fun getString(context: Context, key: String, defaultValue: String): String {
+    open fun getString(key: String, defaultValue: String, context: Context = cContext): String {
         return getSharedPreferences(context).getString(key, defaultValue)
     }
 
-    open fun setInt(context: Context, key: String, value: Int) {
+    open fun setInt(key: String, value: Int, context: Context = cContext) {
         getEditor(context).putInt(key, value).apply()
     }
 
-    open fun getInt(context: Context, key: String, defaultValue: Int): Int {
+    open fun getInt(key: String, defaultValue: Int, context: Context = cContext): Int {
         return getSharedPreferences(context).getInt(key, defaultValue)
     }
 
-    open fun setLong(context: Context, key: String, value: Long) {
+    open fun setLong(key: String, value: Long, context: Context = cContext) {
         getEditor(context).putLong(key, value).apply()
     }
 
-    open fun getLong(context: Context, key: String, defaultValue: Long): Long {
+    open fun getLong(key: String, defaultValue: Long, context: Context = cContext): Long {
         return getSharedPreferences(context).getLong(key, defaultValue)
     }
 
-    open fun setBoolean(context: Context, key: String, value: Boolean) {
+    open fun setBoolean(key: String, value: Boolean, context: Context = cContext) {
         getEditor(context).putBoolean(key, value).apply()
     }
 
-    open fun getBoolean(context: Context, key: String, defaultValue: Boolean): Boolean {
+    open fun getBoolean(key: String, defaultValue: Boolean, context: Context = cContext): Boolean {
         return getSharedPreferences(context).getBoolean(key, defaultValue)
     }
 
