@@ -21,4 +21,13 @@ object AccessibilityServiceUtils {
         }
     }
 
+    fun isExistElementByText(text: String, accessibilityNodeInfo: AccessibilityNodeInfo): Boolean {
+        return accessibilityNodeInfo.findAccessibilityNodeInfosByText(text).isNotEmpty()
+    }
+
+    fun isExistElementById(resId: String, accessibilityNodeInfo: AccessibilityNodeInfo): Boolean {
+        return accessibilityNodeInfo.findAccessibilityNodeInfosByViewId(resId).isNotEmpty()
+    }
+
+
 }
