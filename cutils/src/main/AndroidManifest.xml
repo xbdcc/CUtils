@@ -3,9 +3,14 @@
           package="com.carlos.cutils">
 
     <uses-permission android:name="android.permission.INTERNET"/>
+
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
+    <!--imei-->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <!--net type-->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 
     <application
         >
