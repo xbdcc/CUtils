@@ -30,5 +30,8 @@ dependencies {
     testImplementation 'junit:junit:4.12'
 
     implementation 'com.github.xbdcc:Cutils:0.0.8'
+//    implementation 'com.github.xbdcc:Cutils:latest.release'
+//    implementation 'com.github.xbdcc:Cutils:+'
+//    implementation 'com.github.xbdcc:Cutils:latest.integration'
 
 }
