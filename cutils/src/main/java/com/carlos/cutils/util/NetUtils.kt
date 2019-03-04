@@ -28,7 +28,7 @@ class NetUtils {
             return resultData
 //            Log.i("Http通信之HttpURLConnection", "get方法\n" + resultData);
         } catch (e: Exception) {
-            e.printStackTrace()
+            LogUtils.e("error", e)
             return ""
         }
     }
@@ -61,13 +61,12 @@ class NetUtils {
             LogUtils.d("test:$stringBuffer")
             return stringBuffer.toString()
         } catch (e: Exception) {
-            LogUtils.d("error", e)
-            e.printStackTrace()
+            LogUtils.e("error", e)
             return ""
         }
     }
 
-    fun download(url: String, filePath: String, handler: Handler) {
+    fun download(url: String, filePath: String, handler: Handler, isOverride: Boolean = false) {
         try {
             val file = File(filePath)
             LogUtils.d("filePath:" + file.path)
@@ -77,6 +76,9 @@ class NetUtils {
 
             var hasDownSize = 0L
 
+            if (isOverride && file.exists()) {
+                file.delete()
+            }
             if (file.exists()) {
                 hasDownSize = file.length()
 
@@ -101,7 +103,7 @@ class NetUtils {
 
                     val percent = hasDownSize * 100.0f / totoalSize
                     handler.sendEmptyMessage(percent.toInt())
-                    LogUtils.d("percent:$percent----down:$hasDownSize---total:$totoalSize")
+//                    LogUtils.d("percent:$percent----down:$hasDownSize---total:$totoalSize")
                 }
             } else if (code == 416) {
                 handler.sendEmptyMessage(100)
@@ -109,6 +111,7 @@ class NetUtils {
                 handler.sendEmptyMessage(-1)
         } catch (e: Exception) {
             handler.sendEmptyMessage(-1)
+            LogUtils.e("error:", e)
         }
 
     }
