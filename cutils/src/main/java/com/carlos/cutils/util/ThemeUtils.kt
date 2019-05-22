@@ -24,7 +24,7 @@ object ThemeUtils {
             window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
             window.statusBarColor = Color.TRANSPARENT
             window.decorView.systemUiVisibility =
-                View.SYSTEM_UI_FLAG_LAYOUT_STABLE or View.SYSTEM_UI_FLAG_FULLSCREEN
+                View.SYSTEM_UI_FLAG_LAYOUT_STABLE or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
         } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             val window = activity.window
             window.setFlags(
@@ -39,8 +39,9 @@ object ThemeUtils {
      * if need top closed to statusbar, should uses this method or set "fitsSystemWindows=true" to xml root.
      */
     fun setFitSystemWindow(activity: Activity, isFitSystemWindow: Boolean) {
-        activity.findViewById<ViewGroup>(android.R.id.content).getChildAt(0).fitsSystemWindows =
-            isFitSystemWindow
+        if (isFitSystemWindow)
+            activity.findViewById<ViewGroup>(android.R.id.content).getChildAt(0).fitsSystemWindows =
+                isFitSystemWindow
     }
 
 }
