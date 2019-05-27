@@ -7,7 +7,7 @@ android {
 
     defaultConfig {
         applicationId "com.carlos.cutils.demo"
-        minSdkVersion 15
+        minSdkVersion 19
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
@@ -29,9 +29,13 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     testImplementation 'junit:junit:4.12'
 
-    implementation 'com.github.xbdcc:Cutils:0.0.8'
+//    implementation 'com.github.xbdcc:Cutils:0.0.8'
 //    implementation 'com.github.xbdcc:Cutils:latest.release'
-    implementation 'com.github.xbdcc:Cutils:+'
+//    implementation 'com.github.xbdcc:Cutils:+'
 //    implementation 'com.github.xbdcc:Cutils:latest.integration'
+
+    implementation project(':cutils')
+    implementation 'org.greenrobot:eventbus:3.1.1'
+
 
 }

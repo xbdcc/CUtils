@@ -19,6 +19,7 @@ open class CBaseWebViewActivity : CBaseActivity() {
         webSettings.useWideViewPort = true//大视图模式
         webSettings.setAppCacheEnabled(true)//是否使用缓存
         webSettings.domStorageEnabled = true
+        webSettings.loadWithOverviewMode = true //是否自适应屏幕
     }
 
     fun initWebView(webView: WebView) {

@@ -1,0 +1,42 @@
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_focused="false">
+
+        <layer-list>
+            <!--<item>-->
+                <!--<shape>-->
+                    <!--<solid android:color="#0000" />-->
+                <!--</shape>-->
+            <!--</item>-->
+            <item >
+                <shape android:shape="rectangle">
+                    <!--<padding-->
+                        <!--android:bottom="10dp" />-->
+                    <solid android:color="#ffffffff"/>
+                    <corners android:radius="26dp"/>
+                    <item android:name="android:shadowColor">#a64e8acf</item>
+                    <item android:name="android:shadowDx">0</item>
+                    <item android:name="android:shadowDy">1</item>
+                </shape>
+            </item>
+        </layer-list>
+
+
+        <!--<shape android:shape="rectangle">-->
+            <!--<solid android:color="#ffffffff" />-->
+        <!--</shape>-->
+    </item>
+    <item android:state_focused="true">
+        <shape android:shape="rectangle">
+            <stroke android:width="2dp" android:color="#ff3a94ff" />
+            <solid android:color="#ffffffff" />
+            <corners android:radius="26dp" />
+            <item android:name="android:shadowColor">#a64e8acf</item>
+            <item android:name="android:shadowDx">0</item>
+            <item android:name="android:shadowDy">1</item>
+        </shape>
+
+        <!--<shape android:shape="rectangle">-->
+            <!--<solid android:color="#ffffffff" />-->
+        <!--</shape>-->
+    </item>
+</selector>
