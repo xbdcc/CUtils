@@ -44,4 +44,22 @@ object ThemeUtils {
                 isFitSystemWindow
     }
 
+    /**
+     * hide top and bottom bar.
+     */
+    fun hideBottomUIMenu(activity: Activity) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            val decorView = activity.window.decorView
+            val uiOptions =
+                View.SYSTEM_UI_FLAG_LAYOUT_STABLE or
+                        View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION or
+                        View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN or
+                        View.SYSTEM_UI_FLAG_HIDE_NAVIGATION or // hide nav bar
+                        View.SYSTEM_UI_FLAG_FULLSCREEN or // hide status bar
+                        View.SYSTEM_UI_FLAG_IMMERSIVE
+            decorView.systemUiVisibility = uiOptions
+            activity.window.addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION)
+        }
+    }
+
 }
