@@ -37,20 +37,6 @@ object DeviceUtils {
         return imei
     }
 
-    fun getAppVersionName(context: Context) = try {
-        context.packageManager.getPackageInfo(context.packageName, 0).versionName
-    } catch (e: PackageManager.NameNotFoundException) {
-        e.printStackTrace()
-        ""
-    }
-
-    fun getAppVersionCode(context: Context) = try {
-        context.packageManager.getPackageInfo(context.packageName, 0).versionCode
-    } catch (e: PackageManager.NameNotFoundException) {
-        e.printStackTrace()
-        1
-    }
-
     fun getPhoneModel() = Build.MODEL
 
     fun getPhoneBroad() = Build.BOARD
