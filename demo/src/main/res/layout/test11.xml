@@ -19,7 +19,6 @@
         android:text="返回"/>
 
     <EditText
-        android:id="@+id/et_password"
         android:layout_width="224dp"
         android:layout_height="35dp"
         android:layout_marginTop="12dp"
@@ -41,7 +40,6 @@
 
 
     <EditText
-        android:id="@+id/et_password"
         android:layout_width="224dp"
         android:layout_height="35dp"
         android:layout_marginTop="12dp"
