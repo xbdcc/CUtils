@@ -8,7 +8,7 @@ import android.util.Log
 
 object LogUtils {
 
-    private val TAG = "LogUtils"
+    var TAG = "LogUtils"
 
     var isShowLog = true
 
@@ -59,10 +59,10 @@ object LogUtils {
             val index = if (stackTraceElements.size > 4) 4 else stackTraceElements.size - 1
             stringBuilder.append("[")
             stringBuilder.append(stackTraceElements[index].className).append(".")
-            stringBuilder.append(stackTraceElements[index].methodName).append("()").append(":")
-            stringBuilder.append("lineNumber=").append(stackTraceElements[index].lineNumber)
+            stringBuilder.append(stackTraceElements[index].methodName).append("(")
+            stringBuilder.append(stackTraceElements[index].fileName).append(":")
+                .append(stackTraceElements[index].lineNumber).append(")")
             stringBuilder.append("]")
             return stringBuilder.toString()
         }
-
 }

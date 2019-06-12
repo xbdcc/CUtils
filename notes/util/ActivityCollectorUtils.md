@@ -1,4 +1,4 @@
-# 统一管理结束Activity工具类
+# 统一管理结束Activity工具类ActivityCollectorUtils.kt
 
 ## 适用场景
 - 在打开某个页面时按返回键需要同时退出前几个页面
