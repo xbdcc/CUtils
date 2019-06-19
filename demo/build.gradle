@@ -34,8 +34,8 @@ dependencies {
 //    implementation 'com.github.xbdcc:Cutils:+'
 //    implementation 'com.github.xbdcc:Cutils:latest.integration'
 
-    implementation project(':cutils')
+//    implementation project(':cutils')
     implementation 'org.greenrobot:eventbus:3.1.1'
-//    implementation 'com.github.xbdcc:Cutils:0.0.14'
+    implementation 'com.github.xbdcc:Cutils:0.0.15'
 
 }

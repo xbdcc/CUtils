@@ -1,3 +1,4 @@
+* `19/06/19` Update AccessibilityServiceUtils tool class. (v0.0.16)
 * `19/06/12` Add CI and CHANGELOG.md. (v0.0.15)
 * `19/05/29` Add AppUtils tool class.
 * `19/05/27` Add ActivityCollectorUtils tool class.

@@ -20,5 +20,35 @@ android:
     - sys-img-armeabi-v7a-android-19
     - sys-img-x86-android-17
 
+before_cache:
+  - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
+  - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
+cache:
+  directories:
+    - $HOME/.gradle/caches/
+    - $HOME/.gradle/wrapper/
+    - $HOME/.android/build-cache
+
 script:
   - ./gradlew assembleRelease
+
+
+
+# 部署
+deploy:
+  # 部署到GitHub Release。
+  # 除此之外，Travis CI还支持发布到fir.im、AWS、Google App Engine等
+  provider: releases
+  # Github oauth token
+  api_key: "GET_TOKEN"
+  # 部署文件路径；对于Android就部署生成的 apk 文件
+#  file: "FILE TO UPLOAD"
+  # 避免 Travis CI在部署之前清空生成的APK文件
+  skip_cleanup: true
+  # 发布时机
+  on:
+    # tags设置为true表示只有在有tag的情况下才部署
+    tags: true
+
+after_success:
+  - ssh xxx@xxxx.xxxx.xxxx.xxxx "./travis_build" # 请替换成自己的登录IP和登录用户

@@ -10,7 +10,7 @@ import android.os.Build
  */
 object AppUtils {
 
-    fun getAppVersionName(context: Context, packageName: String = context.packageName) = try {
+    fun getVersionName(context: Context, packageName: String = context.packageName) = try {
         context.packageManager.getPackageInfo(packageName, 0).versionName
     } catch (e: PackageManager.NameNotFoundException) {
         e.printStackTrace()

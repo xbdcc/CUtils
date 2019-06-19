@@ -1,5 +1,8 @@
-[![api](https://img.shields.io/badge/API-19+-brightgreen.svg)](https://android-arsenal.com/api?level=19)
+# CUtils
 
+[![api](https://img.shields.io/badge/API-19+-brightgreen.svg)](https://android-arsenal.com/api?level=19)
+[![Build Status](https://travis-ci.org/xbdcc/CUtils.svg?branch=master)](https://travis-ci.org/xbdcc/CUtils)
+[![](https://jitpack.io/v/xbdcc/cutils.svg)](https://jitpack.io/#xbdcc/cutils)
 
 ## How to config
 
@@ -12,6 +15,11 @@
 ```
     implementation 'com.github.xbdcc:Cutils:0.0.14'
 ```
+
+
+## [Change Log](CHANGELOG.md)
+
+
 
 ## Table of Contents
 

@@ -7,27 +7,24 @@ import android.view.accessibility.AccessibilityNodeInfo
  */
 object AccessibilityServiceUtils {
 
-    fun findAndClickOneByText(text: String, accessibilityNodeInfo: AccessibilityNodeInfo) {
+    fun findAndClickFirstOneByText(text: String, accessibilityNodeInfo: AccessibilityNodeInfo) {
         val node = accessibilityNodeInfo.findAccessibilityNodeInfosByText(text)
         if (node.isNotEmpty()) {
             node[0].performAction(AccessibilityNodeInfo.ACTION_CLICK)
         }
     }
 
-    fun findAndClickOneById(resId: String, accessibilityNodeInfo: AccessibilityNodeInfo) {
+    fun findAndClickFirstOneById(resId: String, accessibilityNodeInfo: AccessibilityNodeInfo) {
         val node = accessibilityNodeInfo.findAccessibilityNodeInfosByViewId(resId)
         if (node.isNotEmpty()) {
             node[0].performAction(AccessibilityNodeInfo.ACTION_CLICK)
         }
     }
 
-    fun isExistElementByText(text: String, accessibilityNodeInfo: AccessibilityNodeInfo): Boolean {
-        return accessibilityNodeInfo.findAccessibilityNodeInfosByText(text).isNotEmpty()
-    }
+    fun isExistElementByText(text: String, accessibilityNodeInfo: AccessibilityNodeInfo?) =
+        accessibilityNodeInfo?.findAccessibilityNodeInfosByText(text)?.isNotEmpty() ?: false
 
-    fun isExistElementById(resId: String, accessibilityNodeInfo: AccessibilityNodeInfo): Boolean {
-        return accessibilityNodeInfo.findAccessibilityNodeInfosByViewId(resId).isNotEmpty()
-    }
-
+    fun isExistElementById(resId: String, accessibilityNodeInfo: AccessibilityNodeInfo?) =
+        accessibilityNodeInfo?.findAccessibilityNodeInfosByViewId(resId)?.isNotEmpty() ?: false
 
 }
