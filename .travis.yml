@@ -21,4 +21,4 @@ android:
     - sys-img-x86-android-17
 
 script:
-  - ./gradlew ass
+  - ./gradlew assembleRelease
