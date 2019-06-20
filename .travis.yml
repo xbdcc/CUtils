@@ -33,7 +33,6 @@ script:
   - ./gradlew assembleRelease
 
 
-
 # 部署
 deploy:
   # 部署到GitHub Release。
@@ -50,5 +49,5 @@ deploy:
     # tags设置为true表示只有在有tag的情况下才部署
     tags: true
 
-after_success:
-  - ssh xxx@xxxx.xxxx.xxxx.xxxx "./travis_build" # 请替换成自己的登录IP和登录用户
+#after_success:
+#  - ssh xxx@xxxx.xxxx.xxxx.xxxx "./travis_build" # 请替换成自己的登录IP和登录用户
