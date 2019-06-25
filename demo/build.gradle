@@ -37,6 +37,5 @@ dependencies {
 //    implementation project(':cutils')
     implementation 'org.greenrobot:eventbus:3.1.1'
     implementation 'com.github.xbdcc:cutils:0.0.16'
-//    implementation 'com.carlos.cutils:CUtils:0.0.16'
 
 }
