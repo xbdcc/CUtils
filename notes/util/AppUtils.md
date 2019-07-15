@@ -5,7 +5,7 @@
 
 ## 提供方法
 
-|方法名|使用方法|
+|方法名|方法说明|
 |---|---:|
 |getAppVersionName|context必传，packageName如果不传则获取本应用的信息，如果传则获取包名对应的应用信息|
 |getVersionCode|context必传，packageName如果不传则获取本应用的信息，如果传则获取包名对应的应用信息|

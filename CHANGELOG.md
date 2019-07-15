@@ -1,3 +1,4 @@
+* `19/07/15` Update AccessibilityServiceUtils tool class. (v0.0.18)
 * `19/06/20` Update AccessibilityServiceUtils tool class. (v0.0.17)
 * `19/06/19` Update AccessibilityServiceUtils tool class. (v0.0.16)
 * `19/06/12` Add CI and CHANGELOG.md. (v0.0.15)

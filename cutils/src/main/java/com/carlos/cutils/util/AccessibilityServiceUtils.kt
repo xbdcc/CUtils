@@ -29,4 +29,9 @@ object AccessibilityServiceUtils {
     fun isExistElementById(resId: String, accessibilityNodeInfo: AccessibilityNodeInfo?) =
         accessibilityNodeInfo?.findAccessibilityNodeInfosByViewId(resId)?.isNotEmpty() ?: false
 
+    fun getElementsByText(resId: String, accessibilityNodeInfo: AccessibilityNodeInfo?) =
+        accessibilityNodeInfo?.findAccessibilityNodeInfosByText(resId)
+
+    fun getElementsById(text: String, accessibilityNodeInfo: AccessibilityNodeInfo?) =
+        accessibilityNodeInfo?.findAccessibilityNodeInfosByViewId(text)
 }
