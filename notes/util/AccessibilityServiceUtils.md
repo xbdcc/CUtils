@@ -6,7 +6,7 @@
 ## 提供方法
 
 |方法名|方法说明|
-|---|---:|
+|:---|:---|
 |findAndClickFirstOneByText|点击查找到的第一个元素，传入text和NodeInfo|
 |findAndClickFirstOneById|点击查找到的第一个元素，传入id和NodeInfo|
 |isExistElementByText|返回是否存在找到该元素，传入text和NodeInfo|

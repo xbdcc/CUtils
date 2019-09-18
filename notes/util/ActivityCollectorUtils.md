@@ -9,7 +9,7 @@
 onDestroy方法加上removeActivity
 
 |方法名|方法说明|
-|---|---:|
+|:---|:---|
 |addActivity|在Activity的onCreate方法里面添加|
 |removeActivity|在Activity的onDestroy方法里面添加|
 |finishAll|结束所有Activity|

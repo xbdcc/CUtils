@@ -6,7 +6,7 @@
 ## 提供方法
 
 |方法名|方法说明|
-|---|---:|
+|:---|:---|
 |getImei|获取设备IMEI|
 |getPhoneModel|获取厂商名称|
 |getPhoneBroad|获取设备型号|

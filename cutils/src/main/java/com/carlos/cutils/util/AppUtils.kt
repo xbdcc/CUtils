@@ -26,4 +26,12 @@ object AppUtils {
         1L
     }
 
+    fun getMetaData(context: Context, key: String): String {
+        val applicationInfo = context.packageManager.getApplicationInfo(
+            context.packageName,
+            PackageManager.GET_META_DATA
+        )
+        return applicationInfo.metaData.getString(key) ?: ""
+    }
+
 }
