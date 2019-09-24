@@ -13,7 +13,7 @@
 
 - Add the following dependency to your `build.gradle` file.
 ```
-    implementation 'com.github.xbdcc:cutils:0.0.18'
+    implementation 'com.github.xbdcc:cutils:0.0.19'
 ```
 
 
