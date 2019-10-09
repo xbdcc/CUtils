@@ -13,7 +13,7 @@
         android:supportsRtl="true"
 
         android:theme="@style/CAppTheme">
-        <activity android:name=".TestActivity"
+        <activity android:name=".AnimActivity"
             android:screenOrientation="landscape"
             android:windowSoftInputMode="adjustPan"
             >
