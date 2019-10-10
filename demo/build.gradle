@@ -2,6 +2,9 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
+// 注意：主App中请确保添加aspectjx
+apply plugin: 'android-aspectjx'
+
 android {
     compileSdkVersion 28
 
@@ -36,6 +39,6 @@ dependencies {
 
     implementation project(':cutils')
     implementation 'org.greenrobot:eventbus:3.1.1'
-//    implementation 'com.github.xbdcc:cutils:0.0.16'
+
 
 }

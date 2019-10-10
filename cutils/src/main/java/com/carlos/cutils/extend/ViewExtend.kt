@@ -8,10 +8,10 @@ import com.carlos.cutils.util.LogUtils
  * Created by Carlos on 2019-09-28.
  */
 
-inline fun <T : View> T.singleClick(time: Long = 1000, crossinline block: (T) -> Unit) {
+inline fun <T : View> T.singleClick(spaceTime: Long = 100, crossinline block: (T) -> Unit) {
     setOnClickListener {
         val currentTimeMillis = System.currentTimeMillis()
-        if ((currentTimeMillis - lastClickTime > time || this is Checkable)) {
+        if ((currentTimeMillis - lastClickTime > spaceTime || this is Checkable)) {
             lastClickTime = currentTimeMillis
             block(this)
             LogUtils.d("点击了")

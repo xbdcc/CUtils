@@ -9,7 +9,7 @@ import com.carlos.cutils.base.CBaseWebViewActivity
  */
 class WebviewActivity : CBaseWebViewActivity() {
 
-    private val url = "http://www.baidu.com/"
+    private val url = "https://www.jianshu.com/p/e1099a94b979"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,6 +22,8 @@ class WebviewActivity : CBaseWebViewActivity() {
         initWebView(webView)
 
         webView.loadUrl(url)
+
+        WebView.setWebContentsDebuggingEnabled(BuildConfig.DEBUG)
 
     }
 

@@ -34,4 +34,6 @@ dependencies {
     testApi 'junit:junit:4.12'
     androidTestApi 'androidx.test:runner:1.1.1'
     androidTestApi 'androidx.test.espresso:espresso-core:3.1.1'
+
+    api 'org.aspectj:aspectjrt:1.9.2'
 }

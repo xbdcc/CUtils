@@ -28,6 +28,9 @@
 - [统一管理Activity工具类](notes/util/ActivityCollectorUtils.md) -> [ActivityCollectorUtils.kt][ActivityCollectorUtils.kt]
 - [打印日志工具类](notes/util/ActivityCollectorUtils.md) -> [LogUtils.kt][LogUtils.kt]
 - [无障碍服务工具类](notes/util/AccessibilityServiceUtils.md) -> [AccessibilityServiceUtils.kt][AccessibilityServiceUtils.kt]
+- [Kotlin中View扩展工具类](notes/util/ViewExtend.md) -> [ViewExtend.kt][ViewExtend.kt]
+- [防重复点击工具类](notes/util/ViewExtend.md) -> [ViewExtend.kt][ViewExtend.kt]
+- [AOP注解防重复点击工具类](notes/util/CSingleClick.md) -> [CSingleClick.kt][CSingleClick.kt]
 
 [DeviceUtils.kt]: cutils/src/main/java/com/carlos/cutils/util/DeviceUtils.kt
 [AppUtils.kt]: cutils/src/main/java/com/carlos/cutils/util/AppUtils.kt
@@ -35,4 +38,6 @@
 [DeviceUtils.kt]: cutils/src/main/java/com/carlos/cutils/util/DeviceUtils.kt
 [LogUtils.kt]: cutils/src/main/java/com/carlos/cutils/util/LogUtils.kt
 [AccessibilityServiceUtils.kt]: cutils/src/main/java/com/carlos/cutils/util/AccessibilityServiceUtils.kt
+[ViewExtend.kt]: cutils/src/main/java/com/carlos/cutils/extend/ViewExtend.kt
+[CSingleClick.kt]: cutils/src/main/java/com/carlos/cutils/aop
 
