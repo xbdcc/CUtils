@@ -1,3 +1,4 @@
+* `19/10/29` Add CUncaughtExceptionHandler class. 
 * `19/10/10` Add AOP annotation tool class to prevent repteated clicks. 
 * `19/10/09` Add ViewExtend class and update Android Studio to 3.5.1. 
 * `19/09/24` Add TimerHelper tool class. (v0.0.19)

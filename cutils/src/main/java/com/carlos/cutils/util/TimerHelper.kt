@@ -41,11 +41,4 @@ class TimerHelper(private val spaceTime: Long, private val mTimeProcessor: TimeP
         fun process()
     }
 
-    fun abc() {
-        TimerHelper(100, object : TimeProcessor {
-            override fun process() {
-                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-            }
-        })
-    }
 }
