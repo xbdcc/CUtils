@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Adapte Android P(9)：if Android P not add this config, use http request will -->
+<!-- link: https://developer.android.com/training/articles/security-config.html -->
+<network-security-config>
+    <base-config cleartextTrafficPermitted="true">
+        <!-- trust certificates, allow  -->
+        <trust-anchors>
+            <certificates
+                overridePins="true"
+                src="system" />
+            <certificates
+                overridePins="true"
+                src="user" />
+        </trust-anchors>
+    </base-config>
+</network-security-config>

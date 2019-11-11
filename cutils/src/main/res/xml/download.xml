@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Android 7 file permission -->
+<!-- link: https://developer.android.com/about/versions/nougat/android-7.0-changes.html#accessibility -->
+<!-- link: https://mp.weixin.qq.com/s?__biz=MzAxMTI4MTkwNQ==&mid=2650823231&idx=1&sn=650093dfbdb04da12f2595f3f54676a9&chksm=80b78ea1b7c007b7dd5a628dc324b6150a801b7209c9cbf3900e7f5930471f3b5177c3761195&scene=21#wechat_redirect -->
 <paths>
 
     <external-path path="." name="strorange" />
