@@ -22,18 +22,57 @@ android {
         }
     }
 
+    repositories {
+        maven { url 'https://oss.sonatype.org/content/repositories/snapshots/' }
+        jcenter()
+        google()
+    }
+
 }
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
 
-    api "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    api 'androidx.appcompat:appcompat:1.0.2'
-    api 'androidx.core:core-ktx:1.1.0-alpha03'
-    api 'androidx.constraintlayout:constraintlayout:1.1.3'
-    testApi 'junit:junit:4.12'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'androidx.appcompat:appcompat:1.0.2'
+    implementation 'androidx.core:core-ktx:1.1.0-alpha03'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    testImplementation 'junit:junit:4.12'
     androidTestApi 'androidx.test:runner:1.1.1'
     androidTestApi 'androidx.test.espresso:espresso-core:3.1.1'
 
-    api 'org.aspectj:aspectjrt:1.9.2'
+    implementation 'org.aspectj:aspectjrt:1.9.2'
 }
+
+//apply plugin: 'maven'
+//uploadArchives{
+//    repositories.mavenDeployer{
+//        // 本地仓库路径
+//        repository(url: "http://192.168.82.41:8081/repository/maven-snapshots/") {
+////        repository(url: "https://oss.sonatype.org/content/repositories/snapshots") {
+//            authentication(userName: "xbdcc", password: "30104991GNAHCOAC") // maven授权信息
+//        }
+//        // 唯一标识
+//        pom.groupId = "cn.carlos.cutils"
+//        // 项目名称
+//        pom.artifactId = "Cutils"
+//        // 版本号
+//        pom.version = "0.0.21"
+//    }
+//}
+//apply plugin: 'maven'
+//uploadArchives{
+//    repositories.mavenDeployer{
+//        // 本地仓库路径
+//        repository(url: "http://192.168.82.41:8081/repository/maven-releases/") {
+////        repository(url: "https://oss.sonatype.org/content/repositories/snapshots") {
+//            authentication(userName: "caochang", password: "xbd") // maven授权信息
+//        }
+//        // 唯一标识
+//        pom.groupId = "cn.carlos.cutils"
+//        // 项目名称
+//        pom.artifactId = "Cutils"
+//        // 版本号
+//        pom.version = "0.0.5"
+//    }
+//}
