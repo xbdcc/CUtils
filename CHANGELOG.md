@@ -1,3 +1,4 @@
+* `19/12/06` Add CBaseEditActivity class. 
 * `19/11/11` Update to Android Studio 3.5.2. 
 * `19/10/29` Add CUncaughtExceptionHandler class. 
 * `19/10/10` Add AOP annotation tool class to prevent repteated clicks. 
