@@ -14,7 +14,7 @@ import com.carlos.cutils.util.LogUtils.d
 /**
  * Created by Carlos on 2019-12-06.
  */
-class CBaseEditActivity : CBaseActivity() {
+open class CBaseEditActivity : CBaseActivity() {
 
     fun openSoftInput(view: View) {
         val imm =
