@@ -10,7 +10,7 @@ open class CUncaughtExceptionHandler : Thread.UncaughtExceptionHandler {
 
     override fun uncaughtException(t: Thread?, e: Throwable?) {
         if (t == null || e == null) return
-        LogUtils.d("find uncaught execption:", e)
+        LogUtils.e("find uncaught execption:", e)
         quitApp()
     }
 

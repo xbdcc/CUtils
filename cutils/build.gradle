@@ -22,12 +22,6 @@ android {
         }
     }
 
-    repositories {
-        maven { url 'https://oss.sonatype.org/content/repositories/snapshots/' }
-        jcenter()
-        google()
-    }
-
 }
 
 dependencies {
@@ -43,36 +37,3 @@ dependencies {
 
     implementation 'org.aspectj:aspectjrt:1.9.2'
 }
-
-//apply plugin: 'maven'
-//uploadArchives{
-//    repositories.mavenDeployer{
-//        // 本地仓库路径
-//        repository(url: "http://192.168.82.41:8081/repository/maven-snapshots/") {
-////        repository(url: "https://oss.sonatype.org/content/repositories/snapshots") {
-//            authentication(userName: "xbdcc", password: "30104991GNAHCOAC") // maven授权信息
-//        }
-//        // 唯一标识
-//        pom.groupId = "cn.carlos.cutils"
-//        // 项目名称
-//        pom.artifactId = "Cutils"
-//        // 版本号
-//        pom.version = "0.0.21"
-//    }
-//}
-//apply plugin: 'maven'
-//uploadArchives{
-//    repositories.mavenDeployer{
-//        // 本地仓库路径
-//        repository(url: "http://192.168.82.41:8081/repository/maven-releases/") {
-////        repository(url: "https://oss.sonatype.org/content/repositories/snapshots") {
-//            authentication(userName: "caochang", password: "xbd") // maven授权信息
-//        }
-//        // 唯一标识
-//        pom.groupId = "cn.carlos.cutils"
-//        // 项目名称
-//        pom.artifactId = "Cutils"
-//        // 版本号
-//        pom.version = "0.0.5"
-//    }
-//}
