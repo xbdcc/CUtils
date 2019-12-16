@@ -1,0 +1,24 @@
+apply plugin: 'com.novoda.bintray-release'
+
+def defaultPropertiesFile = rootProject.file("buildsystem/cutils.properties")
+def defaultProperties = new Properties()
+defaultProperties.load(new FileInputStream(defaultPropertiesFile))
+
+def publishPropertiesFile = rootProject.file("xbd/cutils.properties")
+if (publishPropertiesFile.exists()) {
+    defaultProperties.load(new FileInputStream(publishPropertiesFile))
+}
+
+publish {
+    userOrg = defaultProperties['userOrg']
+    groupId = defaultProperties['groupId']
+    artifactId = defaultProperties['artifactId']
+    publishVersion = "0.0.23"
+
+    bintrayUser = defaultProperties['bintrayUser']
+    bintrayKey = defaultProperties['bintrayKey']
+    dryRun = false
+
+    desc = 'An android tool library.'
+    website = 'https://github.com/xbdcc/CUtils'
+}
