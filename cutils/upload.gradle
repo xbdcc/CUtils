@@ -1,0 +1,31 @@
+apply plugin: 'maven'
+uploadArchives{
+    repositories.mavenDeployer{
+        // 仓库路径，localhost改为对应ip地址
+        repository(url: "http://localhost:8081/repository/maven-releases/") {
+            authentication(userName: "caochang", password: "xbd") // maven授权信息
+        }
+        // 唯一标识
+        pom.groupId = "com.carlos.cutils"
+        // 项目名称
+        pom.artifactId = "cutils"
+        // 版本号
+        pom.version = "0.1"
+    }
+}
+
+////SNAPSHOTS
+//uploadArchives{
+//    repositories.mavenDeployer{
+//        // 仓库路径，localhost改为对应ip地址
+//        repository(url: "http://localhost:8081/repository/maven-snapshots/") {
+//            authentication(userName: "caochang", password: "xbd") // maven授权信息
+//        }
+//        // 唯一标识
+//        pom.groupId = "com.carlos.cutils"
+//        // 项目名称
+//        pom.artifactId = "cutils"
+//        // 版本号
+//        pom.version = "0.1-SNAPSHOT"
+//    }
+//}

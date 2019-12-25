@@ -2,7 +2,13 @@
 
 [![api](https://img.shields.io/badge/API-19+-brightgreen.svg)](https://android-arsenal.com/api?level=19)
 [![Build Status](https://travis-ci.org/xbdcc/CUtils.svg?branch=master)](https://travis-ci.org/xbdcc/CUtils)
-[![](https://jitpack.io/v/xbdcc/cutils.svg)](https://jitpack.io/#xbdcc/cutils)
+[![jitpack](https://jitpack.io/v/xbdcc/cutils.svg)](https://jitpack.io/#xbdcc/cutils)
+[![bintray](https://api.bintray.com/packages/xbdcc/maven/cutils/images/download.svg)](https://bintray.com/xbdcc/maven/cutils/_latestVersion)
+<!--哈哈我是注释，不会在浏览器中显示。-->
+<!--
+![bintray](https://api.bintray.com/packages/xbdcc/maven/cutils/images/download.svg)
+-->
+
 
 ## How to config
 
@@ -17,10 +23,6 @@
 ```
 
 
-## [Change Log](CHANGELOG.md)
-
-
-
 ## Table of Contents
 
 - [设备信息获取工具类](notes/util/DeviceUtils.md) -> [DeviceUtils.kt][DeviceUtils.kt]
@@ -29,12 +31,9 @@
 - [打印日志工具类](notes/util/ActivityCollectorUtils.md) -> [LogUtils.kt][LogUtils.kt]
 - [无障碍服务工具类](notes/util/AccessibilityServiceUtils.md) -> [AccessibilityServiceUtils.kt][AccessibilityServiceUtils.kt]
 - [Kotlin中View扩展工具类](notes/util/ViewExtend.md) -> [ViewExtend.kt][ViewExtend.kt]
-- [防重复点击工具类](notes/extend/ViewExtend.md) ->
-  [ViewExtend.kt][ViewExtend.kt]
-- [AOP注解防重复点击工具类](notes/util/CSingleClick.md) ->
-  [CSingleClick.kt][CSingleClick.kt]
-- [全局捕获未捕获异常类](notes/execption/CUncaughtExceptionHandler.md) ->
-  [CUncaughtExceptionHandler.kt][CUncaughtExceptionHandler.kt]
+- [防重复点击工具类](notes/extend/ViewExtend.md) -> [ViewExtend.kt][ViewExtend.kt]
+- [AOP注解防重复点击工具类](notes/util/CSingleClick.md) -> [CSingleClick.kt][CSingleClick.kt]
+- [全局捕获未捕获异常类](notes/execption/CUncaughtExceptionHandler.md) ->  [CUncaughtExceptionHandler.kt][CUncaughtExceptionHandler.kt]
 
 [DeviceUtils.kt]: cutils/src/main/java/com/carlos/cutils/util/DeviceUtils.kt
 [AppUtils.kt]: cutils/src/main/java/com/carlos/cutils/util/AppUtils.kt
@@ -46,3 +45,4 @@
 [CSingleClick.kt]: cutils/src/main/java/com/carlos/cutils/aop
 [CUncaughtExceptionHandler.kt]: cutils/src/main/java/com/carlos/cutils/execption
 
+## [Change Log](CHANGELOG.md)
