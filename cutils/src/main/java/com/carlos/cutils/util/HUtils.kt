@@ -8,6 +8,7 @@ import android.view.View
 import android.view.WindowManager
 
 /**
+ * Github: https://github.com/xbdcc/.
  * Created by Carlos on 2019-05-22.
  */
 object HUtils {

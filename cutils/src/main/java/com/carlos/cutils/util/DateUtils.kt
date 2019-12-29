@@ -4,6 +4,7 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 /**
+ * Github: https://github.com/xbdcc/.
  * Created by Carlos on 2019/2/22.
  */
 object DateUtils {

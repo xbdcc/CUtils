@@ -1,10 +1,12 @@
 package com.carlos.cutils.constants
 
 /**
+ * Github: https://github.com/xbdcc/.
  * Created by Carlos on 2019-12-17.
  */
 const val ONLY_ONE_CHINESE = "[\\u4e00-\\u9fa5]"
 const val ONLY_CHINESE = "[\\u4e00-\\u9fa5]+"
+const val LEAVE_ONLY_CHINESE = "[\\u4e00-\\u9fa5]+"
 
 const val ONLY_ONE_ENGLISH = "[a-zA-Z]"
 const val ONLY_ENGLISH = "[a-zA-Z]+"

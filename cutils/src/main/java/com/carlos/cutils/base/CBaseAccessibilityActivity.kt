@@ -5,6 +5,7 @@ import android.content.Context
 import android.view.accessibility.AccessibilityManager
 
 /**
+ * Github: https://github.com/xbdcc/.
  * Created by Carlos on 2019/2/22.
  */
 open class CBaseAccessibilityActivity : CBaseActivity() {

@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.view.WindowManager
 
 /**
+ * Github: https://github.com/xbdcc/.
  * Created by Carlos on 2019-05-20.
  */
 object ThemeUtils {

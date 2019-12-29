@@ -7,6 +7,7 @@ import android.media.MediaRecorder
 import com.carlos.cutils.listener.VoiceListener
 
 /**
+ * Github: https://github.com/xbdcc/.
  * Created by Carlos on 2018/3/6.
  */
 

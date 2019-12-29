@@ -5,6 +5,7 @@ import android.content.pm.PackageManager
 import android.os.Build
 
 /**
+ * Github: https://github.com/xbdcc/.
  * if not pass packageName field is to get app yourself, otherwise to get other app.
  * Created by Carlos on 2019-05-29.
  */

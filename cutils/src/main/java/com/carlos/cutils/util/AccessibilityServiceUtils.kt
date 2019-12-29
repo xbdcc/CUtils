@@ -3,6 +3,7 @@ package com.carlos.cutils.util
 import android.view.accessibility.AccessibilityNodeInfo
 
 /**
+ * Github: https://github.com/xbdcc/.
  * Created by Carlos on 2019/2/20.
  */
 object AccessibilityServiceUtils {

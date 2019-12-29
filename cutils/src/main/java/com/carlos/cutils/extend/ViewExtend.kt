@@ -5,6 +5,7 @@ import android.widget.Checkable
 import com.carlos.cutils.util.LogUtils
 
 /**
+ * Github: https://github.com/xbdcc/.
  * Created by Carlos on 2019-09-28.
  */
 

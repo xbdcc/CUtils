@@ -6,6 +6,7 @@ import java.net.HttpURLConnection
 import java.net.URL
 
 /**
+ * Github: https://github.com/xbdcc/.
  * Created by Carlos on 2018/11/30.
  */
 class NetUtils {

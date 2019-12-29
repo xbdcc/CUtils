@@ -12,6 +12,7 @@ import android.view.WindowManager
 import androidx.annotation.RequiresPermission
 
 /**
+ * Github: https://github.com/xbdcc/.
  * Created by Carlos on 2019/2/21.
  */
 object DeviceUtils {

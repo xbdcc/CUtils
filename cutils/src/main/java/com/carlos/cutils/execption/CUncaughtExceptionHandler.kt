@@ -4,6 +4,7 @@ import com.carlos.cutils.util.LogUtils
 import kotlin.system.exitProcess
 
 /**
+ * Github: https://github.com/xbdcc/.
  * Created by Carlos on 2019-10-29.
  */
 open class CUncaughtExceptionHandler : Thread.UncaughtExceptionHandler {

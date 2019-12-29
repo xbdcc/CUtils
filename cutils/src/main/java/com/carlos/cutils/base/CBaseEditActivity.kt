@@ -12,6 +12,7 @@ import android.widget.ScrollView
 import com.carlos.cutils.util.LogUtils.d
 
 /**
+ *
  * Created by Carlos on 2019-12-06.
  */
 open class CBaseEditActivity : CBaseActivity() {

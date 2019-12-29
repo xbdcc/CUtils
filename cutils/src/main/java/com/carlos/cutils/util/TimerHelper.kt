@@ -3,6 +3,7 @@ package com.carlos.cutils.util
 import java.util.*
 
 /**
+ * Github: https://github.com/xbdcc/.
  * Created by Carlos on 2019-09-24.
  */
 class TimerHelper(private val spaceTime: Long, private val mTimeProcessor: TimeProcessor) {

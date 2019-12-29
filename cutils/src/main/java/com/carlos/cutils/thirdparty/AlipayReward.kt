@@ -5,6 +5,7 @@ import android.content.Intent
 import android.net.Uri
 
 /**
+ * Github: https://github.com/xbdcc/.
  * Created by Carlos on 2019/2/15.
  */
 class AlipayReward(

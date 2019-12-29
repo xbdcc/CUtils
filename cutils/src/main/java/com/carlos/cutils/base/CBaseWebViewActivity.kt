@@ -7,6 +7,7 @@ import android.webkit.WebView
 import android.webkit.WebViewClient
 
 /**
+ * Github: https://github.com/xbdcc/.
  * Created by Carlos on 2019/3/20.
  */
 open class CBaseWebViewActivity : CBaseActivity() {

@@ -3,6 +3,7 @@ package com.carlos.cutils.util
 import android.app.Activity
 
 /**
+ * Github: https://github.com/xbdcc/.
  * A tool class to controll finish activity.
  * add in onCreate method, remove in onDestroy method.
  * Created by Carlos on 2019-05-27.

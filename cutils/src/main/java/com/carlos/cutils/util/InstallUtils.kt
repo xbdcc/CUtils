@@ -8,6 +8,7 @@ import androidx.core.content.FileProvider
 import java.io.File
 
 /**
+ * Github: https://github.com/xbdcc/.
  * 安装APK工具类
  * Created by Carlos on 2018/11/14.
  */

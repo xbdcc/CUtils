@@ -5,6 +5,7 @@ import android.content.Intent
 import com.carlos.cutils.util.LogUtils
 
 /**
+ * Github: https://github.com/xbdcc/.
  * Created by Carlos on 2019/2/15.
  * 跳转到微信扫码
  */

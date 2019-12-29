@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.SharedPreferences
 
 /**
+ * Github: https://github.com/xbdcc/.
  * Created by Carlos on 2019/2/21.
  * Same proccess to use.
  */

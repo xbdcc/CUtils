@@ -1,5 +1,6 @@
+* `19/12/29` Add CBaseInputFilter class.
 * `19/12/25` Add RegularConstans class.
-* `19/12/16` Config jcenter and update Android Studio to 3.5.3. 
+* `19/12/16` Config jcenter and update Android Studio to 3.5.3.
 * `19/12/08` Add EncodeUtils class. 
 * `19/12/06` Add CBaseEditActivity class. 
 * `19/11/11` Update to Android Studio 3.5.2. 

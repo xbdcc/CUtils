@@ -3,6 +3,7 @@ package com.carlos.cutils.util
 import android.util.Log
 
 /**
+ * Github: https://github.com/xbdcc/.
  * Created by Carlos on 2018/3/6.
  */
 
