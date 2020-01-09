@@ -1,8 +1,13 @@
 apply plugin: 'maven'
-uploadArchives{
-    repositories.mavenDeployer{
+
+// local
+uploadArchives {
+    repositories.mavenDeployer {
         // 仓库路径，localhost改为对应ip地址
         repository(url: "http://localhost:8081/repository/maven-releases/") {
+            authentication(userName: "caochang", password: "xbd") // maven授权信息
+        }
+        snapshotRepository(url: "http://localhost:8081/repository/maven-snapshots/") {
             authentication(userName: "caochang", password: "xbd") // maven授权信息
         }
         // 唯一标识
@@ -10,22 +15,33 @@ uploadArchives{
         // 项目名称
         pom.artifactId = "cutils"
         // 版本号
-        pom.version = "0.1"
+        pom.version = "0.0.25-SNAPSHOT"
     }
 }
 
-////SNAPSHOTS
-//uploadArchives{
-//    repositories.mavenDeployer{
-//        // 仓库路径，localhost改为对应ip地址
-//        repository(url: "http://localhost:8081/repository/maven-snapshots/") {
-//            authentication(userName: "caochang", password: "xbd") // maven授权信息
+def defaultPropertiesFile = rootProject.file("buildsystem/cutils.properties")
+def defaultProperties = new Properties()
+defaultProperties.load(new FileInputStream(defaultPropertiesFile))
+
+def publishPropertiesFile = rootProject.file("xbd/cutils.properties")
+if (publishPropertiesFile.exists()) {
+    defaultProperties.load(new FileInputStream(publishPropertiesFile))
+}
+
+//// sonatype，snashot成功，stag失败
+//uploadArchives {
+//    repositories.mavenDeployer {
+//        repository(url: "https://oss.sonatype.org/service/local/staging/deploy/maven2") {
+//            authentication(userName: defaultProperties['userName'], password: defaultProperties['password'])
+//        }
+//        snapshotRepository(url: "https://oss.sonatype.org/content/repositories/snapshots") {
+//            authentication(userName: defaultProperties.getProperty('userName'), password: defaultProperties.getProperty('password'))
 //        }
 //        // 唯一标识
-//        pom.groupId = "com.carlos.cutils"
+//        pom.groupId = "com.github.xbdcc"
 //        // 项目名称
 //        pom.artifactId = "cutils"
 //        // 版本号
-//        pom.version = "0.1-SNAPSHOT"
+//        pom.version = "0.0.1-SNAPSHOT"
 //    }
 //}

@@ -13,7 +13,7 @@ publish {
     userOrg = defaultProperties['userOrg']
     groupId = defaultProperties['groupId']
     artifactId = defaultProperties['artifactId']
-    publishVersion = "0.0.24"
+    publishVersion = "0.0.25"
 
     bintrayUser = defaultProperties['bintrayUser']
     bintrayKey = defaultProperties['bintrayKey']

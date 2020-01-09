@@ -1,3 +1,4 @@
+* `20/01/09` Add SoundPoolUtils class.
 * `19/12/29` Add CBaseInputFilter class.
 * `19/12/25` Add RegularConstans class.
 * `19/12/16` Config jcenter and update Android Studio to 3.5.3.

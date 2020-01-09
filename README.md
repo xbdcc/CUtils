@@ -11,15 +11,9 @@
 
 
 ## How to config
-
-- Add the following repositories to your `build.gradle` file.
-```
-        maven { url 'https://jitpack.io' }
-```
-
 - Add the following dependency to your `build.gradle` file.
 ```
-    implementation 'com.github.xbdcc:cutils:0.0.21'
+    implementation 'com.carlos.cutils:cutils:0.0.25'
 ```
 
 

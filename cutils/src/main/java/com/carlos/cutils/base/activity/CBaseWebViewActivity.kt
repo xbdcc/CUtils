@@ -1,16 +1,23 @@
-package com.carlos.cutils.base
+package com.carlos.cutils.base.activity
 
 import android.annotation.TargetApi
 import android.os.Build
+import android.view.KeyEvent
+import android.view.View
+import android.webkit.WebChromeClient
 import android.webkit.WebResourceRequest
 import android.webkit.WebView
 import android.webkit.WebViewClient
+import android.widget.ProgressBar
 
 /**
  * Github: https://github.com/xbdcc/.
  * Created by Carlos on 2019/3/20.
  */
 open class CBaseWebViewActivity : CBaseActivity() {
+
+    lateinit var webView: WebView
+    var backToLast: Boolean = false
 
     fun initSettings(webView: WebView) {
         val webSettings = webView.settings
@@ -23,7 +30,9 @@ open class CBaseWebViewActivity : CBaseActivity() {
         webSettings.loadWithOverviewMode = true //是否自适应屏幕
     }
 
-    fun initWebView(webView: WebView) {
+    open fun initWebView(webView: WebView, isInitSetting: Boolean = true, backToLast: Boolean = false) : WebView {
+        this.webView = webView
+        if (isInitSetting) initSettings(webView)
         webView.webViewClient = object : WebViewClient() {
 
             @SuppressWarnings("deprecation")
@@ -50,6 +59,37 @@ open class CBaseWebViewActivity : CBaseActivity() {
                 return true
             }
         }
+        return webView
+    }
+
+    fun WebView.setProgressBar(progressBar: ProgressBar, isFinishedGone: Boolean = false) {
+        webView.webChromeClient = object : WebChromeClient() {
+            override fun onProgressChanged(view: WebView?, newProgress: Int) {
+                super.onProgressChanged(view, newProgress)
+                if(newProgress == 100) {
+                    if (isFinishedGone)
+                        progressBar.visibility = View.GONE
+                    else
+                        progressBar.visibility = View.INVISIBLE
+                }else {
+                    progressBar.visibility = View.VISIBLE
+                    progressBar.progress = newProgress
+                }
+            }
+        }
+    }
+
+    /**
+     * 返回键动作
+     */
+    override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
+        if (keyCode == KeyEvent.KEYCODE_BACK && this::webView.isInitialized) {
+            if (webView.canGoBack() and backToLast) {
+                webView.goBack()
+                return true
+            }
+        }
+        return super.onKeyDown(keyCode, event)
     }
 
 }

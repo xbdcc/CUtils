@@ -1,4 +1,4 @@
-package com.carlos.cutils.base
+package com.carlos.cutils.base.activity
 
 import android.accessibilityservice.AccessibilityServiceInfo
 import android.content.Context

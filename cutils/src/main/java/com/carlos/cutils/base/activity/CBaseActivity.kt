@@ -1,4 +1,4 @@
-package com.carlos.cutils.base
+package com.carlos.cutils.base.activity
 
 import android.content.pm.PackageManager
 import android.os.Build

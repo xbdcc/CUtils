@@ -1,4 +1,4 @@
-package com.carlos.cutils.base
+package com.carlos.cutils.base.activity
 
 import android.app.Activity
 import android.content.Context
