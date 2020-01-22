@@ -1,8 +1,13 @@
 package com.carlos.cutils.demo
 
 import android.os.Bundle
+import android.util.Log
+import android.view.View
+import android.webkit.WebChromeClient
 import android.webkit.WebView
-import com.carlos.cutils.base.CBaseWebViewActivity
+import com.carlos.cutils.base.activity.CBaseWebViewActivity
+import kotlinx.android.synthetic.main.activity_web.*
+import java.util.*
 
 /**
  * Created by Carlos on 2019/3/20.
@@ -13,17 +18,16 @@ class WebviewActivity : CBaseWebViewActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_web)
+        Log.d("xbd2", Date().toString())
+        initWebView(webview).setProgressBar(progressBar)
 
-        val webView = WebView(this)
-        setContentView(webView)
+        webview.loadUrl(url)
 
-        initSettings(webView)
 
-        initWebView(webView)
-
-        webView.loadUrl(url)
-
-        WebView.setWebContentsDebuggingEnabled(BuildConfig.DEBUG)
+        button.setOnClickListener {
+            webview.loadUrl(url)
+        }
 
     }
 

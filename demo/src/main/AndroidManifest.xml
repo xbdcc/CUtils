@@ -3,6 +3,7 @@
           package="com.carlos.cutils.demo">
 
     <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
     <application
         android:name=".MyApplication"
@@ -13,8 +14,7 @@
         android:supportsRtl="true"
 
         android:theme="@style/CAppTheme">
-        <activity android:name=".AnimActivity"
-            android:screenOrientation="landscape"
+        <activity android:name=".WebviewActivity"
             android:windowSoftInputMode="adjustPan"
             >
             <intent-filter>
@@ -23,6 +23,11 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+
+        <activity android:name=".RewardActivity"/>
+        <activity android:name=".ImageViewActivity"/>
+<!--        <activity android:name=".WebviewActivity"/>-->
+
     </application>
 
 </manifest>

@@ -38,6 +38,9 @@ object DeviceUtils {
         return imei
     }
 
+    /**
+     * Be careful, it can be Chinese,like:'清华同方'.
+     */
     fun getPhoneModel() = Build.MODEL
 
     fun getPhoneBroad() = Build.BOARD

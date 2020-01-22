@@ -60,4 +60,6 @@ object PreferencesUtil {
         return context.getSharedPreferences(FILE_NAME, Context.MODE_MULTI_PROCESS)
     }
 
+
 }
+

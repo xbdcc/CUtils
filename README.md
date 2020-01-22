@@ -13,7 +13,7 @@
 ## How to config
 - Add the following dependency to your `build.gradle` file.
 ```
-    implementation 'com.carlos.cutils:cutils:0.0.25'
+    implementation 'com.carlos.cutils:cutils:0.0.26'
 ```
 
 

@@ -28,17 +28,46 @@ android {
 
 }
 
+configurations.all {
+
+    /**
+     * 用于控制SNAPSHOT版本下载刷新频率，默认每隔24小时，gradle会检查一次依赖
+     * Release版本如果本地已下载则不会主动从镜像下载
+     */
+    // release check for updates every build
+    resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
+    // check for 10 minutes interval everybu il
+//    resolutionStrategy.cacheChangingModulesFor 10, 'minutes'
+//    resolutionStrategy.cacheChangingModulesFor 4, 'hours'
+//    resolutionStrategy.cacheDynamicVersionsFor 0, 'seconds'
+
+}
+
+
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     testImplementation 'junit:junit:4.12'
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'androidx.appcompat:appcompat:1.0.2'
+    implementation 'androidx.core:core-ktx:1.1.0-alpha03'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    testImplementation 'junit:junit:4.12'
+    androidTestApi 'androidx.test:runner:1.1.1'
+    androidTestApi 'androidx.test.espresso:espresso-core:3.1.1'
 
 //    implementation 'com.github.xbdcc:Cutils:0.0.8'
 //    implementation 'com.github.xbdcc:Cutils:latest.release'
 //    implementation 'com.github.xbdcc:Cutils:+'
 //    implementation 'com.github.xbdcc:Cutils:latest.integration'
 
-    implementation project(':cutils')
+//    implementation project(':cutils')
+    implementation 'com.carlos.cutils:cutils:0.0.26'
+
     implementation 'org.greenrobot:eventbus:3.1.1'
 
+    androidTestImplementation 'androidx.test.ext:junit:1.1.0'
+    androidTestImplementation 'androidx.test:core:1.1.0'
+    implementation "org.jetbrains.kotlinx:kotlinx-serialization-runtime:0.9.1"
 
 }

@@ -1,23 +1,32 @@
-package com.carlos.cutils.base.activity
+package com.carlos.cutils.base.fragment
 
 import android.annotation.TargetApi
 import android.os.Build
-import android.view.KeyEvent
 import android.view.View
 import android.webkit.WebChromeClient
 import android.webkit.WebResourceRequest
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import android.widget.ProgressBar
+import com.carlos.cutils.R
 
 /**
  * Github: https://github.com/xbdcc/.
- * Created by Carlos on 2019/3/20.
+ * Created by Carlos on 2020-01-21.
  */
-open class CBaseWebViewActivity : CBaseActivity() {
+abstract class CBaseWebFragment(val url: String) : CBaseFragment() {
 
     lateinit var webView: WebView
-    var backToLast: Boolean = false
+
+    override fun initView(view: View) {
+        initWebView(view.findViewById(R.id.webview))
+        webView.setProgressBar(view.findViewById(R.id.progressBar))
+        webView.loadUrl(url)
+    }
+
+    override fun layoutId(): Int {
+        return R.layout.fragment_webview
+    }
 
     fun initSettings(webView: WebView) {
         val webSettings = webView.settings
@@ -30,9 +39,8 @@ open class CBaseWebViewActivity : CBaseActivity() {
         webSettings.loadWithOverviewMode = true //是否自适应屏幕
     }
 
-    open fun initWebView(webView: WebView, isInitSetting: Boolean = true, backToLast: Boolean = false) : WebView {
+    open fun initWebView(webView: WebView, isInitSetting: Boolean = true) : WebView {
         this.webView = webView
-        this.backToLast = backToLast
         if (isInitSetting) initSettings(webView)
         webView.webViewClient = object : WebViewClient() {
 
@@ -78,19 +86,6 @@ open class CBaseWebViewActivity : CBaseActivity() {
                 }
             }
         }
-    }
-
-    /**
-     * 返回键动作
-     */
-    override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
-        if (keyCode == KeyEvent.KEYCODE_BACK && this::webView.isInitialized) {
-            if (webView.canGoBack() and backToLast) {
-                webView.goBack()
-                return true
-            }
-        }
-        return super.onKeyDown(keyCode, event)
     }
 
 }

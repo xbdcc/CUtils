@@ -2,7 +2,8 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <Button
         android:id="@+id/button"
@@ -10,8 +11,33 @@
         android:layout_height="wrap_content"
         android:text="@string/button"/>
 
-    <!--<WebView-->
-        <!--android:id="@+id/web"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"></WebView>-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <WebView
+            android:id="@+id/webview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></WebView>
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:visibility="invisible"
+            style="?android:attr/progressBarStyleHorizontal"
+            />
+
+    </RelativeLayout>
+<!--    <ProgressBar-->
+<!--        android:id="@+id/progressBar"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="30dp"-->
+<!--        android:visibility="invisible"-->
+<!--        style="?android:attr/progressBarStyleHorizontal"-->
+<!--        />-->
+
+<!--    <WebView-->
+<!--        android:id="@+id/webview"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"></WebView>-->
 </LinearLayout>
