@@ -3,7 +3,7 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply from: "publish.gradle"
 
-def buildTime () {
+def buildTime() {
     return new Date().format("yyyy-MM-dd HH:mm:ss")
 }
 
@@ -26,7 +26,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             buildConfigField("String", "BUILD_TIME", "\"${buildTime()}\"")
         }
-        debug{
+        debug {
             buildConfigField("String", "BUILD_TIME", "\"${buildTime()}\"")
         }
     }
@@ -45,5 +45,6 @@ dependencies {
     androidTestApi 'androidx.test.espresso:espresso-core:3.1.1'
 
     api 'org.aspectj:aspectjrt:1.9.2'
+
 
 }

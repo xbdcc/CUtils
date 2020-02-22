@@ -1,5 +1,6 @@
 package com.carlos.cutils.execption
 
+import com.carlos.cutils.util.ActivityCollectorUtils
 import com.carlos.cutils.util.LogUtils
 import kotlin.system.exitProcess
 
@@ -16,6 +17,8 @@ open class CUncaughtExceptionHandler : Thread.UncaughtExceptionHandler {
     }
 
     private fun quitApp() {
+        //finish all activity
+        ActivityCollectorUtils.finishAll()
         android.os.Process.killProcess(android.os.Process.myPid())
         exitProcess(1)
     }

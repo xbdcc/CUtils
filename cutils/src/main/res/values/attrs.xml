@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <attr name="orientation" format="enum"/>
+<!--    <attr name="orientation" format="enum"/>-->
 <!--    <declare-styleable name="CircleButton">-->
 
 <!--        <attr name="orientation" >-->

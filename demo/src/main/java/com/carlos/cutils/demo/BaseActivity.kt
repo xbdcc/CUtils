@@ -11,5 +11,4 @@ open class BaseActivity : CBaseActivity() {
     fun startActivity(clazz: Class<*>) {
         defaultStartActivity(clazz)
     }
-
 }

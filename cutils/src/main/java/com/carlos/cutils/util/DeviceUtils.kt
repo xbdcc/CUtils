@@ -29,21 +29,20 @@ object DeviceUtils {
             }
         }
 
-        if (telephonyManager.deviceId != null)
-            imei = telephonyManager.deviceId
+        imei = if (telephonyManager.deviceId != null)
+            telephonyManager.deviceId
         else
-            imei =
-                Settings.Secure.getString(context.getContentResolver(), Settings.Secure.ANDROID_ID)
+            Settings.Secure.getString(context.getContentResolver(), Settings.Secure.ANDROID_ID)
 
         return imei
     }
 
+    fun getPhoneBrand() = Build.BRAND
+
     /**
-     * Be careful, it can be Chinese,like:'清华同方'.
+     * Be careful, the result may be Chinese,like:'清华同方', but the network request header cannot be Chinese.
      */
     fun getPhoneModel() = Build.MODEL
-
-    fun getPhoneBroad() = Build.BOARD
 
     fun getOSVersion() = Build.VERSION.RELEASE
 
@@ -78,7 +77,7 @@ object DeviceUtils {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             if (context.checkSelfPermission(Manifest.permission.ACCESS_NETWORK_STATE) == PackageManager.PERMISSION_DENIED) {
                 return netType
-            }
+              }
         }
         if (networkInfo == null)
         else if (networkInfo.type == ConnectivityManager.TYPE_WIFI) {

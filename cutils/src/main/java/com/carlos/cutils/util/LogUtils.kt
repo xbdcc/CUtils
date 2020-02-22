@@ -13,41 +13,49 @@ object LogUtils {
 
     var isShowLog = true
 
+    @JvmStatic
     fun i(msg: String) {
         if (isShowLog)
             Log.i(TAG, "$logTitle$msg")
     }
 
+    @JvmStatic
     fun i(msg: String, throwable: Throwable) {
         if (isShowLog)
             Log.i(TAG, "$logTitle$msg", throwable)
     }
 
+    @JvmStatic
     fun d(msg: String) {
         if (isShowLog)
             Log.d(TAG, "$logTitle$msg")
     }
 
+    @JvmStatic
     fun d(msg: String, throwable: Throwable) {
         if (isShowLog)
             Log.d(TAG, "$logTitle$msg", throwable)
     }
 
+    @JvmStatic
     fun w(msg: String) {
         if (isShowLog)
             Log.w(TAG, "$logTitle$msg")
     }
 
+    @JvmStatic
     fun w(msg: String, throwable: Throwable) {
         if (isShowLog)
             Log.w(TAG, "$logTitle$msg", throwable)
     }
 
+    @JvmStatic
     fun e(msg: String) {
         if (isShowLog)
             Log.e(TAG, "$logTitle$msg")
     }
 
+    @JvmStatic
     fun e(msg: String, throwable: Throwable) {
         if (isShowLog)
             Log.e(TAG, "$logTitle$msg", throwable)

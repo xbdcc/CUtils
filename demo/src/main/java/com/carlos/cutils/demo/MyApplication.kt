@@ -14,9 +14,9 @@ class MyApplication : Application() {
         super.onCreate()
         instance = this
         Log.d("xbd", Date().toString())
-        Thread.sleep(3000)
+//        Thread.sleep(3000)
         Log.d("xbd", Date().toString())
-        Thread.sleep(18000)
+//        Thread.sleep(18000)
         Log.d("xbd", Date().toString())
     }
 

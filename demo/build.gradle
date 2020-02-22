@@ -21,7 +21,7 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true //开启混淆，资源压缩
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
@@ -61,13 +61,16 @@ dependencies {
 //    implementation 'com.github.xbdcc:Cutils:+'
 //    implementation 'com.github.xbdcc:Cutils:latest.integration'
 
-//    implementation project(':cutils')
-    implementation 'com.carlos.cutils:cutils:0.0.26'
+    implementation project(':cutils')
+//    implementation 'com.carlos.cutils:cutils:0.0.26'
 
     implementation 'org.greenrobot:eventbus:3.1.1'
 
     androidTestImplementation 'androidx.test.ext:junit:1.1.0'
     androidTestImplementation 'androidx.test:core:1.1.0'
     implementation "org.jetbrains.kotlinx:kotlinx-serialization-runtime:0.9.1"
+
+    implementation 'com.google.android.material:material:1.0.0'
+
 
 }

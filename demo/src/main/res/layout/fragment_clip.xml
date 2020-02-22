@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/et_copy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="待复制的文本"/>
+
+    <Button
+        android:id="@+id/b_copy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="点击复制上面文本"/>
+
+    <Button
+        android:id="@+id/b_paste"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="点击在下面显示复制的文本"/>
+
+    <TextView
+        android:id="@+id/tv_paste"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+</LinearLayout>

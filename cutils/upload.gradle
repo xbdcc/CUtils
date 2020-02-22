@@ -28,7 +28,6 @@ if (publishPropertiesFile.exists()) {
     defaultProperties.load(new FileInputStream(publishPropertiesFile))
 }
 
-// sonatype，snashot成功，stag失败
 uploadArchives {
     repositories.mavenDeployer {
         repository(url: "https://oss.sonatype.org/service/local/staging/deploy/maven2") {
@@ -42,6 +41,6 @@ uploadArchives {
         // 项目名称
         pom.artifactId = "cutils"
         // 版本号
-        pom.version = "0.0.26-SNAPSHOT"
+        pom.version = "0.0.27"
     }
 }

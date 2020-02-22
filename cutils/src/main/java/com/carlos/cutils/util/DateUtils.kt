@@ -10,9 +10,18 @@ import java.util.*
 object DateUtils {
 
     private const val FORMAT_YEAR_TO_MINUTE = "yyyy-MM-dd HH:mm"
+    private const val FORMAT_YEAR_TO_SECOND = "yyyy-MM-dd HH:mm:ss"
 
-    fun formatDate(time: Long): String {
+    fun getYearToSecond(): String {
+        return formateToSecond(System.currentTimeMillis())
+    }
+
+    fun formateToMinute(time: Long): String {
         return format(time, FORMAT_YEAR_TO_MINUTE)
+    }
+
+    fun formateToSecond(time: Long): String {
+        return format(time, FORMAT_YEAR_TO_SECOND)
     }
 
     fun format(time: Long, pattern: String): String {

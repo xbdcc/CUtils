@@ -1,3 +1,4 @@
+* `20/02/22` Add ClipboardManagerUtils class and TextExtend class.(v0.0.27)
 * `20/01/22` Add BaseFragment classes.
 * `20/01/09` Add SoundPoolUtils class.
 * `19/12/29` Add CBaseInputFilter class.
