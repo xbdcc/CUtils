@@ -1,0 +1,26 @@
+<resources>
+
+    <style name="style_round_rect_view">
+        <item name="android:layout_width">200dp</item>
+        <item name="android:height">30dp</item>
+    </style>
+
+    <style name="dialogActivityStyle" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowFullscreen">true</item>
+        <!--是否悬浮在activity上-->
+        <item name="android:windowIsFloating">true</item>
+        <!--透明是否-->
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:background">@null</item>
+        <!--设置没有窗口标题、dialog标题等各种标题-->
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:title">@null</item>
+        <item name="android:dialogTitle">@null</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+
+</resources>
