@@ -14,7 +14,7 @@ import com.carlos.cutils.R
  * Github: https://github.com/xbdcc/.
  * Created by Carlos on 2020-01-21.
  */
-abstract class CBaseWebFragment(val url: String) : CBaseFragment() {
+abstract class CBaseWebFragment(val url: String, var isCache: Boolean = true) : CBaseFragment() {
 
     lateinit var webView: WebView
 
@@ -34,7 +34,7 @@ abstract class CBaseWebFragment(val url: String) : CBaseFragment() {
         webSettings.setSupportZoom(true)//是否可以缩放，默认false
         webSettings.builtInZoomControls = false//是否显示缩放按钮，默认false
         webSettings.useWideViewPort = true//大视图模式
-        webSettings.setAppCacheEnabled(true)//是否使用缓存
+        webSettings.setAppCacheEnabled(isCache)//是否使用缓存
         webSettings.domStorageEnabled = true
         webSettings.loadWithOverviewMode = true //是否自适应屏幕
     }

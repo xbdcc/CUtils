@@ -3,6 +3,7 @@ package com.carlos.cutils.util
 import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Context
+import com.carlos.cutils.CUtils
 
 /**
  * Github: https://github.com/xbdcc/.
@@ -11,7 +12,11 @@ import android.content.Context
 object ClipboardManagerUtils {
 
     @JvmStatic
-    fun clipText(context: Context, content: CharSequence, label: CharSequence = "label") {
+    fun clipText(
+        context: Context = CUtils.cContext,
+        content: CharSequence,
+        label: CharSequence = "label"
+    ) {
         val clipboardManager =
             context.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
         val clipData = ClipData.newPlainText(label, content)
@@ -19,8 +24,9 @@ object ClipboardManagerUtils {
     }
 
     @JvmStatic
-    fun getClipText(context: Context): CharSequence {
-        val clipboardManager = context.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+    fun getClipText(context: Context = CUtils.cContext): CharSequence {
+        val clipboardManager =
+            context.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
         // If the clipboardManager has no content.
         if (!clipboardManager.hasPrimaryClip())
             return ""

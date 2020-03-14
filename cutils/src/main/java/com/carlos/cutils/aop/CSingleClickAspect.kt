@@ -19,14 +19,15 @@ class CSingleClickAspect {
      * 定义切点，标记切点为所有被@SingleClick注解的方法
      */
     @Pointcut("execution(@com.carlos.cutils.aop.CSingleClick * *(..))")
-    fun methodAnnotated() {}
+    fun methodAnnotated() {
+    }
 
     @Around("methodAnnotated()")
     @Throws(Throwable::class)
     fun aroundJoinPoint(joinPoint: ProceedingJoinPoint) {
         //get out the parameters of the method
         var view: View? = null
-        for(arg in joinPoint.args) {
+        for (arg in joinPoint.args) {
             if (arg is View) {
                 view = arg
                 break

@@ -10,10 +10,15 @@
 -->
 
 
-## How to config
+## How to use
+- config this to your `build.gralde`
 - Add the following dependency to your `build.gradle` file.
 ```
-    implementation 'com.carlos.cutils:cutils:0.0.27'
+    implementation 'com.carlos.cutils:cutils:0.0.28'
+```
+- Add this code to your `application` file
+```
+    CUtils.init(this)
 ```
 
 
@@ -25,14 +30,12 @@
 - [打印日志工具类](notes/util/ActivityCollectorUtils.md) -> [LogUtils.kt][LogUtils.kt]
 - [无障碍服务工具类](notes/util/AccessibilityServiceUtils.md) -> [AccessibilityServiceUtils.kt][AccessibilityServiceUtils.kt]
 - [Kotlin中View扩展工具类](notes/util/ViewExtend.md) -> [ViewExtend.kt][ViewExtend.kt]
-- [防重复点击工具类](notes/extend/ViewExtend.md) -> [ViewExtend.kt][ViewExtend.kt]
 - [AOP注解防重复点击工具类](notes/util/CSingleClick.md) -> [CSingleClick.kt][CSingleClick.kt]
 - [全局捕获未捕获异常类](notes/execption/CUncaughtExceptionHandler.md) ->  [CUncaughtExceptionHandler.kt][CUncaughtExceptionHandler.kt]
 
 [DeviceUtils.kt]: cutils/src/main/java/com/carlos/cutils/util/DeviceUtils.kt
 [AppUtils.kt]: cutils/src/main/java/com/carlos/cutils/util/AppUtils.kt
 [ActivityCollectorUtils.kt]: cutils/src/main/java/com/carlos/cutils/util/ActivityCollectorUtils.kt
-[DeviceUtils.kt]: cutils/src/main/java/com/carlos/cutils/util/DeviceUtils.kt
 [LogUtils.kt]: cutils/src/main/java/com/carlos/cutils/util/LogUtils.kt
 [AccessibilityServiceUtils.kt]: cutils/src/main/java/com/carlos/cutils/util/AccessibilityServiceUtils.kt
 [ViewExtend.kt]: cutils/src/main/java/com/carlos/cutils/extend/ViewExtend.kt

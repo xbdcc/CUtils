@@ -11,6 +11,7 @@ object LogUtils {
 
     var TAG = "LogUtils"
 
+    @JvmField
     var isShowLog = true
 
     @JvmStatic

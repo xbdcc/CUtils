@@ -18,7 +18,7 @@
             app:color="@color/colorAccent"
             />
 
-        <com.carlos.cutils.view.RoundRectView
+        <com.carlos.cutils.view.RoundRectButton
             android:layout_width="100dp"
             android:layout_height="30dp"
             app:color="@color/colorAccent"

@@ -3,7 +3,7 @@ package com.carlos.cutils.view
 import android.content.Context
 import android.graphics.*
 import android.util.AttributeSet
-import android.view.View
+import androidx.appcompat.widget.AppCompatButton
 import com.carlos.cutils.R
 import com.carlos.cutils.util.LogUtils
 
@@ -11,11 +11,11 @@ import com.carlos.cutils.util.LogUtils
  * Github: https://github.com/xbdcc/.
  * Created by Carlos on 2020/2/26.
  */
-open class RoundRectView @JvmOverloads constructor(
+open class RoundRectButton @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
     defStyleAttr: Int = 0
-) : View(context, attrs, defStyleAttr) {
+) : AppCompatButton(context, attrs, defStyleAttr) {
 
     var paint: Paint = Paint()
     var rectF = RectF(0f, 0f, 0f, 0f)
@@ -29,13 +29,14 @@ open class RoundRectView @JvmOverloads constructor(
 
     init {
         val typedArray =
-            context.obtainStyledAttributes(attrs, R.styleable.RoundRectView, defStyleAttr, 0)
-        color = typedArray.getColor(R.styleable.RoundRectView_solidColor, Color.BLUE)
-        radius = typedArray.getDimension(R.styleable.RoundRectView_radius, 0f)
-        topLeftRadius = typedArray.getDimension(R.styleable.RoundRectView_topLeftRadius, 0f)
-        topRightRadius = typedArray.getDimension(R.styleable.RoundRectView_topRightRadius, 0f)
-        bottomLeftRadius = typedArray.getDimension(R.styleable.RoundRectView_bottomLeftRadius, 0f)
-        bottomRightRadius = typedArray.getDimension(R.styleable.RoundRectView_bottomRightRadius, 0f)
+            context.obtainStyledAttributes(attrs, R.styleable.RoundRectButton, defStyleAttr, 0)
+        color = typedArray.getColor(R.styleable.RoundRectButton_solidColor, Color.BLUE)
+        radius = typedArray.getDimension(R.styleable.RoundRectButton_radius, 0f)
+        topLeftRadius = typedArray.getDimension(R.styleable.RoundRectButton_topLeftRadius, 0f)
+        topRightRadius = typedArray.getDimension(R.styleable.RoundRectButton_topRightRadius, 0f)
+        bottomLeftRadius = typedArray.getDimension(R.styleable.RoundRectButton_bottomLeftRadius, 0f)
+        bottomRightRadius =
+            typedArray.getDimension(R.styleable.RoundRectButton_bottomRightRadius, 0f)
         LogUtils.isShowLog = true
 //        LogUtils.d("typedArray"+ typedArray)
 //        LogUtils.d("radius"+ radius)
@@ -51,7 +52,6 @@ open class RoundRectView @JvmOverloads constructor(
     }
 
     override fun onDraw(canvas: Canvas) {
-        super.onDraw(canvas)
         paint.isAntiAlias = true
         paint.color = color
         paint.style = Paint.Style.FILL
@@ -60,6 +60,7 @@ open class RoundRectView @JvmOverloads constructor(
             drawTotalRound(canvas)
         else
             drawPartRound(canvas)
+        super.onDraw(canvas)
     }
 
     private fun drawTotalRound(canvas: Canvas) {

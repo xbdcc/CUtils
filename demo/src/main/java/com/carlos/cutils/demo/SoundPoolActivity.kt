@@ -3,7 +3,9 @@ package com.carlos.cutils.demo
 import android.media.AudioAttributes
 import android.media.AudioManager
 import android.media.SoundPool
+import android.os.Build
 import android.os.Bundle
+import androidx.annotation.RequiresApi
 import com.carlos.cutils.base.activity.CBaseActivity
 import com.carlos.cutils.extend.clickSound
 import com.carlos.cutils.helper.SoundPoolHelper
@@ -45,12 +47,12 @@ class SoundPoolActivity : CBaseActivity() {
     /**
      * 测试发现播放radio到大概11秒左右，后面会被截断
      */
+    @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     fun initSound(){
         val audioAttributes = AudioAttributes.Builder().setLegacyStreamType(AudioManager.STREAM_SYSTEM).build()
         soundPool = SoundPool.Builder().setMaxStreams(3)
             .setAudioAttributes(audioAttributes)
             .build()
-
 
 //        soundPool = SoundPool(3, AudioManager.STREAM_SYSTEM, 1)
 //        soundId = soundPool.load(this, R.raw.metro, 1)

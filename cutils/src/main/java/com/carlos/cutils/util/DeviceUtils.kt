@@ -10,6 +10,7 @@ import android.telephony.TelephonyManager
 import android.util.DisplayMetrics
 import android.view.WindowManager
 import androidx.annotation.RequiresPermission
+import com.carlos.cutils.CUtils
 
 /**
  * Github: https://github.com/xbdcc/.
@@ -18,7 +19,7 @@ import androidx.annotation.RequiresPermission
 object DeviceUtils {
 
     @RequiresPermission(android.Manifest.permission.READ_PHONE_STATE)
-    fun getImei(context: Context): String {
+    fun getImei(context: Context = CUtils.cContext): String {
         val telephonyManager =
             context.getSystemService(Context.TELEPHONY_SERVICE) as TelephonyManager
         var imei = "000000000000000"
@@ -46,9 +47,9 @@ object DeviceUtils {
 
     fun getOSVersion() = Build.VERSION.RELEASE
 
-    fun getDensity(context: Context) = context.resources.displayMetrics.densityDpi
+    fun getDensity(context: Context = CUtils.cContext) = context.resources.displayMetrics.densityDpi
 
-    fun getScreenResolution(context: Context) =
+    fun getScreenResolution(context: Context = CUtils.cContext) =
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.JELLY_BEAN_MR1) {
             val display =
                 (context.getSystemService(Context.WINDOW_SERVICE) as WindowManager).defaultDisplay
@@ -60,7 +61,7 @@ object DeviceUtils {
             "" + displayMetrics.widthPixels + "x" + displayMetrics.heightPixels
         }
 
-    fun getLanguage(context: Context): String {
+    fun getLanguage(context: Context = CUtils.cContext): String {
         val locale = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N)
             context.resources.configuration.locales.get(0)
         else
@@ -69,7 +70,7 @@ object DeviceUtils {
     }
 
     @RequiresPermission(android.Manifest.permission.ACCESS_NETWORK_STATE)
-    fun getCurrentNetType(context: Context): String {
+    fun getCurrentNetType(context: Context = CUtils.cContext): String {
         val connectivityManager =
             context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
         val networkInfo = connectivityManager.activeNetworkInfo
@@ -77,7 +78,7 @@ object DeviceUtils {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             if (context.checkSelfPermission(Manifest.permission.ACCESS_NETWORK_STATE) == PackageManager.PERMISSION_DENIED) {
                 return netType
-              }
+            }
         }
         if (networkInfo == null)
         else if (networkInfo.type == ConnectivityManager.TYPE_WIFI) {

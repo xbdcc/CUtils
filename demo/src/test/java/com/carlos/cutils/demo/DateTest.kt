@@ -1,6 +1,6 @@
 package com.carlos.cutils.demo
 
-import com.carlos.cutils.util.DateUtils
+import com.carlos.cutils.extend.getYearToSecond
 import org.junit.Test
 
 /**
@@ -10,7 +10,7 @@ class DateTest {
 
     @Test
     fun testDate() {
-        println(DateUtils.formateToSecond(System.nanoTime()))
-        println(DateUtils.formateToSecond(System.currentTimeMillis()))
+        println(getYearToSecond(System.nanoTime()))
+        println(getYearToSecond(System.currentTimeMillis()))
     }
 }

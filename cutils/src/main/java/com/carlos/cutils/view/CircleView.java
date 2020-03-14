@@ -41,8 +41,8 @@ public class CircleView extends View {
 
     private void drawArcCircle1(Canvas canvas) {
 
-        RectF oval = new RectF( 0, 0,getWidth() , getHeight() );
-        canvas.drawArc(oval,20,140,false,paint);
+        RectF oval = new RectF(0, 0, getWidth(), getHeight());
+        canvas.drawArc(oval, 20, 140, false, paint);
     }
 
     private void drawArcCircle(Canvas canvas) {
@@ -52,7 +52,7 @@ public class CircleView extends View {
         float x = (getWidth() - getHeight() / 2) / 2;
         float y = getHeight() / 4;
 
-        RectF oval = new RectF( x, y,getWidth() - x, getHeight() - y);
-        canvas.drawArc(oval,-90,120,false,paint);
+        RectF oval = new RectF(x, y, getWidth() - x, getHeight() - y);
+        canvas.drawArc(oval, -90, 120, false, paint);
     }
 }

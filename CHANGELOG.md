@@ -1,3 +1,4 @@
+* `20/03/14` Add some classes.(v0.0.28)
 * `20/02/27` Add RoundRectView class.
 * `20/02/22` Add ClipboardManagerUtils class and TextExtend class.(v0.0.27)
 * `20/01/22` Add BaseFragment classes.

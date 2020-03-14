@@ -30,7 +30,11 @@ open class CBaseWebViewActivity : CBaseActivity() {
         webSettings.loadWithOverviewMode = true //是否自适应屏幕
     }
 
-    open fun initWebView(webView: WebView, isInitSetting: Boolean = true, backToLast: Boolean = false) : WebView {
+    open fun initWebView(
+        webView: WebView,
+        isInitSetting: Boolean = true,
+        backToLast: Boolean = false
+    ): WebView {
         this.webView = webView
         this.backToLast = backToLast
         if (isInitSetting) initSettings(webView)
@@ -67,12 +71,12 @@ open class CBaseWebViewActivity : CBaseActivity() {
         webView.webChromeClient = object : WebChromeClient() {
             override fun onProgressChanged(view: WebView?, newProgress: Int) {
                 super.onProgressChanged(view, newProgress)
-                if(newProgress == 100) {
+                if (newProgress == 100) {
                     if (isFinishedGone)
                         progressBar.visibility = View.GONE
                     else
                         progressBar.visibility = View.INVISIBLE
-                }else {
+                } else {
                     progressBar.visibility = View.VISIBLE
                     progressBar.progress = newProgress
                 }

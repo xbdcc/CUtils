@@ -21,7 +21,11 @@ inline fun <T : View> T.singleClick(spaceTime: Long = 100, crossinline block: (T
     }
 }
 
-inline fun <T : View> T.clickSound(resId: Int, isEnd: Boolean = true, crossinline block: (T) -> Unit) {
+inline fun <T : View> T.clickSound(
+    resId: Int,
+    isEnd: Boolean = true,
+    crossinline block: (T) -> Unit
+) {
     setOnClickListener {
         if (!isEnd)
             SoundPoolUtils.play(resId, it.context)

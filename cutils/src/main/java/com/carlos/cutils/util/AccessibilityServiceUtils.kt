@@ -8,31 +8,94 @@ import android.view.accessibility.AccessibilityNodeInfo
  */
 object AccessibilityServiceUtils {
 
-    fun findAndClickFirstOneByText(text: String, accessibilityNodeInfo: AccessibilityNodeInfo?) {
-        if (accessibilityNodeInfo == null) return
-        val node = accessibilityNodeInfo.findAccessibilityNodeInfosByText(text)
-        if (node.isNotEmpty()) {
-            node[0].performAction(AccessibilityNodeInfo.ACTION_CLICK)
+    fun findAndClickFirstNodeInfoByText(
+        text: String,
+        isReverse: Boolean = false,
+        accessibilityNodeInfo: AccessibilityNodeInfo?
+    ) {
+        val node = accessibilityNodeInfo?.findAccessibilityNodeInfosByText(text)
+        clickFirstNodeInfo(node, isReverse)
+    }
+
+    fun findAndClickFirstNodeInfoByViewId(
+        viewId: String,
+        isReverse: Boolean = false,
+        accessibilityNodeInfo: AccessibilityNodeInfo?
+    ) {
+        val accessibilityNodeInfos =
+            accessibilityNodeInfo?.findAccessibilityNodeInfosByViewId(viewId)
+        clickFirstNodeInfo(accessibilityNodeInfos, isReverse)
+    }
+
+    fun clickFirstNodeInfo(
+        accessibilityNodeInfos: MutableList<AccessibilityNodeInfo>?,
+        isReverse: Boolean = false
+    ) {
+        if (accessibilityNodeInfos.isNullOrEmpty()) {
+            return
+        }
+        if (isReverse) {
+            accessibilityNodeInfos.last().performAction(AccessibilityNodeInfo.ACTION_CLICK)
+        } else {
+            accessibilityNodeInfos.first().performAction(AccessibilityNodeInfo.ACTION_CLICK)
         }
     }
 
-    fun findAndClickFirstOneById(resId: String, accessibilityNodeInfo: AccessibilityNodeInfo?) {
-        if (accessibilityNodeInfo == null) return
-        val node = accessibilityNodeInfo.findAccessibilityNodeInfosByViewId(resId)
-        if (node.isNotEmpty()) {
-            node[0].performAction(AccessibilityNodeInfo.ACTION_CLICK)
-        }
-    }
-
-    fun isExistElementByText(text: String, accessibilityNodeInfo: AccessibilityNodeInfo?) =
+    fun isExistNodeInfosByText(text: String, accessibilityNodeInfo: AccessibilityNodeInfo?) =
         accessibilityNodeInfo?.findAccessibilityNodeInfosByText(text)?.isNotEmpty() ?: false
 
-    fun isExistElementById(resId: String, accessibilityNodeInfo: AccessibilityNodeInfo?) =
-        accessibilityNodeInfo?.findAccessibilityNodeInfosByViewId(resId)?.isNotEmpty() ?: false
+    fun isExistNodeInfosByViewId(viewId: String, accessibilityNodeInfo: AccessibilityNodeInfo?) =
+        accessibilityNodeInfo?.findAccessibilityNodeInfosByViewId(viewId)?.isNotEmpty() ?: false
 
-    fun getElementsByText(resId: String, accessibilityNodeInfo: AccessibilityNodeInfo?) =
-        accessibilityNodeInfo?.findAccessibilityNodeInfosByText(resId)
+    fun getNodeInfosByText(text: String, accessibilityNodeInfo: AccessibilityNodeInfo?) =
+        accessibilityNodeInfo?.findAccessibilityNodeInfosByText(text)
 
-    fun getElementsById(text: String, accessibilityNodeInfo: AccessibilityNodeInfo?) =
-        accessibilityNodeInfo?.findAccessibilityNodeInfosByViewId(text)
+    fun getNodeInfosByViewId(viewId: String, accessibilityNodeInfo: AccessibilityNodeInfo?) =
+        accessibilityNodeInfo?.findAccessibilityNodeInfosByViewId(viewId)
+
+    fun findAndClickFirstNodeInfoByViewId(
+        viewId: String,
+        childExistId: String,
+        childNotExistIds: String,
+        isReverse: Boolean = false,
+        accessibilityNodeInfo: AccessibilityNodeInfo?
+    ): Boolean {
+        var accessibilityNodeInfos =
+            accessibilityNodeInfo?.findAccessibilityNodeInfosByViewId(viewId) ?: return false
+        if (isReverse) accessibilityNodeInfos = accessibilityNodeInfos.reversed()
+        for (accessibilityNodeInfo in accessibilityNodeInfos) {
+            if (isExistNodeInfosByViewId(childNotExistIds, accessibilityNodeInfo))
+                continue
+            if (!isExistNodeInfosByViewId(childExistId, accessibilityNodeInfo))
+                continue
+            accessibilityNodeInfo.performAction(AccessibilityNodeInfo.ACTION_CLICK)
+            return true
+
+        }
+        return false
+    }
+
+    fun findAndClickFirstNodeInfoByViewIdContainsText(
+        viewId: String,
+        childId: String,
+        childIdContainsText: String,
+        isReverse: Boolean = false,
+        accessibilityNodeInfo: AccessibilityNodeInfo?
+    ): Boolean {
+        var accessibilityNodeInfos =
+            accessibilityNodeInfo?.findAccessibilityNodeInfosByViewId(viewId) ?: return false
+        if (isReverse) accessibilityNodeInfos = accessibilityNodeInfos.reversed()
+        for (accessibilityNodeInfo in accessibilityNodeInfos) {
+            val childNodeInfo = getNodeInfosByViewId(childId, accessibilityNodeInfo)
+            if (childNodeInfo.isNullOrEmpty()) {
+                return false
+            }
+            if (childNodeInfo.first().text.contains(childIdContainsText)) {
+                accessibilityNodeInfo.performAction(AccessibilityNodeInfo.ACTION_CLICK)
+                return true
+            }
+        }
+        return false
+    }
+
 }

@@ -7,6 +7,6 @@
 
 |方法名|方法说明|
 |:---|:---|
-|getAppVersionName|context必传，packageName如果不传则获取本应用的信息，如果传则获取包名对应的应用信息|
-|getVersionCode|context必传，packageName如果不传则获取本应用的信息，如果传则获取包名对应的应用信息|
-|getMetaData|context必传，获取Metadata信息|
+|getAppVersionName|packageName如果不传则获取本应用的信息，如果传则获取包名对应的应用信息|
+|getVersionCode|packageName如果不传则获取本应用的信息，如果传则获取包名对应的应用信息|
+|getMetaData|获取Metadata信息|

@@ -2,6 +2,7 @@ package com.carlos.cutils.demo
 
 import android.content.Context
 import android.content.SharedPreferences
+import com.carlos.cutils.CUtils
 
 /**
  * Created by Carlos on 2018/3/21.
@@ -15,7 +16,8 @@ object PreferencesUtil {
         getEditor(context).putString(key, value).commit()
     }
 
-    fun getString(context: Context, key: String, defaultValue: String): String? {
+
+    fun getString(context: Context, key: String, defaultValue: String = ""): String? {
         return getSharedPreferences(context).getString(key, defaultValue)
     }
 
@@ -24,7 +26,7 @@ object PreferencesUtil {
         getEditor(context).putInt(key, value).commit()
     }
 
-    fun getInt(context: Context, key: String, defaultValue: Int): Int {
+    fun getInt(context: Context, key: String, defaultValue: Int = 0): Int {
         return getSharedPreferences(context).getInt(key, defaultValue)
     }
 
@@ -32,7 +34,7 @@ object PreferencesUtil {
         getEditor(context).putFloat(key, value).commit()
     }
 
-    fun getFloat(context: Context, key: String, defaultValue: Float): Float {
+    fun getFloat(context: Context = CUtils.cContext, key: String, defaultValue: Float = 0f): Float {
         return getSharedPreferences(context).getFloat(key, defaultValue)
     }
 
@@ -40,7 +42,7 @@ object PreferencesUtil {
         getEditor(context).putBoolean(key, defaultValue).commit()
     }
 
-    fun getBoolean(context: Context, key: String, defaultValue: Boolean): Boolean {
+    fun getBoolean(context: Context, key: String, defaultValue: Boolean = false): Boolean {
         return getSharedPreferences(context).getBoolean(key, defaultValue)
     }
 

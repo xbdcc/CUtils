@@ -20,7 +20,7 @@
         <attr name = "color" format = "color" />
     </declare-styleable>
 
-    <declare-styleable name = "RoundRectView">
+    <declare-styleable name = "RoundRectButton">
         <attr name = "radius" format = "dimension" />
         <attr name = "topLeftRadius" format = "dimension" />
         <attr name = "topRightRadius" format = "dimension" />

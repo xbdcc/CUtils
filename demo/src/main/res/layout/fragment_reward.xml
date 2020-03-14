@@ -77,7 +77,6 @@
             android:layout_centerHorizontal="true"
             android:text="长按图片保存二维码"/>
         <Button
-            android:onClick="wechatPay"
             android:id="@+id/b_wechat_reward"
             android:layout_width="wrap_content"
             android:layout_height="35dp"
