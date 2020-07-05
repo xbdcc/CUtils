@@ -9,6 +9,10 @@
         android:onClick="choosePic"
         android:text="选择图片"/>
 
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

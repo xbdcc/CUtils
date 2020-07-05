@@ -4,10 +4,7 @@ import android.Manifest
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import com.carlos.cutils.base.adapter.CBaseMyPagerAdapter
-import com.carlos.cutils.demo.fragment.ClipFragment
-import com.carlos.cutils.demo.fragment.RewardFragment
-import com.carlos.cutils.demo.fragment.ViewFragment
-import com.carlos.cutils.demo.fragment.WebviewFragment
+import com.carlos.cutils.demo.fragment.*
 import com.carlos.cutils.listener.PermissionListener
 import com.carlos.cutils.util.LogUtils
 import kotlinx.android.synthetic.main.activity_main.*
@@ -18,8 +15,8 @@ class MainActivity : BaseActivity() {
 
     private val WECHAT_SERVICE_NAME = "com.carlos.grabredenvelope/.services.WechatService"
 
-    var fragments = mutableListOf<Fragment>( RewardFragment(), WebviewFragment(), ClipFragment(), ViewFragment())
-    var titles = mutableListOf("打赏", "网页", "剪贴", "View")
+    var fragments = mutableListOf<Fragment>( RewardFragment(), WebviewFragment(), ClipFragment(), ViewFragment(), ViewPagerFragment())
+    var titles = mutableListOf("打赏", "网页", "剪贴", "View", "ViewPager")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
