@@ -1,6 +1,8 @@
 package com.carlos.cutils.util
 
+import android.graphics.Rect
 import android.view.accessibility.AccessibilityNodeInfo
+import com.carlos.cutils.CUtils
 
 /**
  * Github: https://github.com/xbdcc/.
@@ -57,6 +59,7 @@ object AccessibilityServiceUtils {
         viewId: String,
         childExistId: String,
         childNotExistIds: String,
+        isJustClickLeft: Boolean = false,
         isReverse: Boolean = false,
         accessibilityNodeInfo: AccessibilityNodeInfo?
     ): Boolean {
@@ -68,11 +71,20 @@ object AccessibilityServiceUtils {
                 continue
             if (!isExistNodeInfosByViewId(childExistId, accessibilityNodeInfo))
                 continue
+            if (isJustClickLeft && !isLeft(accessibilityNodeInfo))
+                continue
             accessibilityNodeInfo.performAction(AccessibilityNodeInfo.ACTION_CLICK)
             return true
 
         }
         return false
+    }
+
+    private fun isLeft(accessibilityNodeInfo: AccessibilityNodeInfo): Boolean {
+        val rect = Rect()
+        accessibilityNodeInfo.getBoundsInScreen(rect)
+        val width = CUtils.cContext.resources.displayMetrics.widthPixels
+        return rect.centerX() < width / 2
     }
 
     fun findAndClickFirstNodeInfoByViewIdContainsText(

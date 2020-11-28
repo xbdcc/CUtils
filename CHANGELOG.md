@@ -1,3 +1,4 @@
+* `20/07/26` Optimize the code.(v0.0.29)
 * `20/07/05` Add CBaseViewPagerAdapter class.
 * `20/03/14` Add some classes.(v0.0.28)
 * `20/02/27` Add RoundRectView class.

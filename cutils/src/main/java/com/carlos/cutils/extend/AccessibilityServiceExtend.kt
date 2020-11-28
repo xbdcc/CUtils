@@ -73,12 +73,14 @@ fun AccessibilityService.findAndClickFirstNodeInfoByViewId(
     viewId: String,
     childExistId: String,
     childNotExistIds: String,
+    isJustClickLeft: Boolean,
     isReverse: Boolean = false,
     accessibilityNodeInfo: AccessibilityNodeInfo? = rootInActiveWindow
 ) = AccessibilityServiceUtils.findAndClickFirstNodeInfoByViewId(
     viewId,
     childExistId,
     childNotExistIds,
+    isJustClickLeft,
     isReverse,
     accessibilityNodeInfo
 )

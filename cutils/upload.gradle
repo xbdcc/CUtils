@@ -43,6 +43,8 @@ uploadArchives {
         pom.artifactId = "cutils"
         // 版本号
 //        pom.version = "0.0.27"
-        pom.version = "0.0.28.7-SNAPSHOT"
+        pom.version = "0.0.28.8-SNAPSHOT"
     }
 }
+
+

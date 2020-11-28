@@ -39,7 +39,7 @@ abstract class CBaseWebFragment(val url: String, var isCache: Boolean = true) : 
         webSettings.loadWithOverviewMode = true //是否自适应屏幕
     }
 
-    open fun initWebView(webView: WebView, isInitSetting: Boolean = true) : WebView {
+    open fun initWebView(webView: WebView, isInitSetting: Boolean = true): WebView {
         this.webView = webView
         if (isInitSetting) initSettings(webView)
         webView.webViewClient = object : WebViewClient() {
@@ -75,17 +75,23 @@ abstract class CBaseWebFragment(val url: String, var isCache: Boolean = true) : 
         webView.webChromeClient = object : WebChromeClient() {
             override fun onProgressChanged(view: WebView?, newProgress: Int) {
                 super.onProgressChanged(view, newProgress)
-                if(newProgress == 100) {
+                if (newProgress == 100) {
                     if (isFinishedGone)
                         progressBar.visibility = View.GONE
                     else
                         progressBar.visibility = View.INVISIBLE
-                }else {
+                } else {
                     progressBar.visibility = View.VISIBLE
                     progressBar.progress = newProgress
                 }
             }
         }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        webView.removeAllViews()
+        webView.destroy()
     }
 
 }

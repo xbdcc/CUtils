@@ -1,4 +1,4 @@
-# 如何发布自己的个人仓库？
+# 发布自己的个人仓库作为第三方SDK使用简单教程
 
 ## 方式一：通过[JitPack](https://jitpack.io/)发布
 - 首先新建一个Github仓库，然后可以看到这里有个releases，如下点击
@@ -88,7 +88,7 @@ maven { url 'https://dl.bintray.com/xbdcc/maven' }
 ```
 
 
-### 参考链接
+## 参考链接
 - [理解Maven中的SNAPSHOT版本和正式版本](https://www.cnblogs.com/huang0925/p/5169624.html)
 - [maven/gradle 打包后自动上传到nexus仓库](https://www.cnblogs.com/yjmyzz/p/auto-upload-artifact-to-nexus.html)
 - [Android Studio将项目发布到Maven仓库（3种方式最新最全）](https://blog.csdn.net/xmxkf/article/details/80674232)

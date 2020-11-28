@@ -97,4 +97,9 @@ open class CBaseWebViewActivity : CBaseActivity() {
         return super.onKeyDown(keyCode, event)
     }
 
+    override fun onDestroy() {
+        super.onDestroy()
+        webView.removeAllViews()
+        webView.destroy()
+    }
 }
