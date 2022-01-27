@@ -47,6 +47,11 @@ abstract class CBaseAccessibilityService : AccessibilityService() {
                     monitorContentChanged(event)
                 }
             }
+            AccessibilityEvent.TYPE_VIEW_CLICKED -> {
+                if (isMonitorContent) {
+                    monitorViewClicked(event)
+                }
+            }
         }
     }
 
@@ -55,6 +60,8 @@ abstract class CBaseAccessibilityService : AccessibilityService() {
     abstract fun monitorWindowChanged(event: AccessibilityEvent)
 
     abstract fun monitorContentChanged(event: AccessibilityEvent)
+
+    open fun monitorViewClicked(event: AccessibilityEvent){}
 
 //    override fun onServiceConnected() {
 //        super.onServiceConnected()

@@ -1,3 +1,4 @@
+* `22/01/27` Update CBaseAccessibilityService class.
 * `21/01/31` Add some classes.
 * `20/07/26` Optimize the code.(v0.0.29)
 * `20/07/05` Add CBaseViewPagerAdapter class.
