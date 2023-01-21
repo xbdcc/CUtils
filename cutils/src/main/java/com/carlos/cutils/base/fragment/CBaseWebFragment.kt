@@ -3,10 +3,7 @@ package com.carlos.cutils.base.fragment
 import android.annotation.TargetApi
 import android.os.Build
 import android.view.View
-import android.webkit.WebChromeClient
-import android.webkit.WebResourceRequest
-import android.webkit.WebView
-import android.webkit.WebViewClient
+import android.webkit.*
 import android.widget.ProgressBar
 import com.carlos.cutils.R
 
@@ -34,9 +31,11 @@ abstract class CBaseWebFragment(val url: String, var isCache: Boolean = true) : 
         webSettings.setSupportZoom(true)//是否可以缩放，默认false
         webSettings.builtInZoomControls = false//是否显示缩放按钮，默认false
         webSettings.useWideViewPort = true//大视图模式
-        webSettings.setAppCacheEnabled(isCache)//是否使用缓存
         webSettings.domStorageEnabled = true
         webSettings.loadWithOverviewMode = true //是否自适应屏幕
+        webSettings.builtInZoomControls = true//系统放大
+        webSettings.displayZoomControls = false//系统放大控件隐藏
+        if (!isCache) webSettings.cacheMode = WebSettings.LOAD_NO_CACHE //不缓存
     }
 
     open fun initWebView(webView: WebView, isInitSetting: Boolean = true): WebView {

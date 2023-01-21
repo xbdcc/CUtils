@@ -7,6 +7,10 @@ import android.graphics.Rect
 import android.os.Build
 import android.view.accessibility.AccessibilityNodeInfo
 import com.carlos.cutils.util.AccessibilityServiceUtils
+import com.carlos.cutils.util.LogUtils
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 /**
  * Created by Carlos on 2020/3/3.
@@ -76,7 +80,7 @@ fun AccessibilityService.findAndClickFirstNodeInfoByViewId(
     isJustClickLeft: Boolean,
     isReverse: Boolean = false,
     accessibilityNodeInfo: AccessibilityNodeInfo? = rootInActiveWindow
-) = AccessibilityServiceUtils.findAndClickFirstNodeInfoByViewId(
+): Boolean = AccessibilityServiceUtils.findAndClickFirstNodeInfoByViewId(
     viewId,
     childExistId,
     childNotExistIds,
@@ -99,7 +103,7 @@ fun AccessibilityService.findAndClickFirstNodeInfoByViewIdContainsText(
     accessibilityNodeInfo
 )
 
-fun AccessibilityService.gesturePath(path: Path, startTime: Long = 500L, duration: Long = 300L) {
+fun AccessibilityService.gesturePath(path: Path, startTime: Long = 200L, duration: Long = 100L) {
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
         val build = GestureDescription.Builder()
         val gestureDescription =
@@ -119,8 +123,8 @@ fun AccessibilityService.gesturePath(path: Path, startTime: Long = 500L, duratio
 
 fun AccessibilityService.gestureViewCenter(
     viewId: String,
-    startTime: Long = 500L,
-    duration: Long = 300L
+    startTime: Long = 200L,
+    duration: Long = 100L
 ) {
     val accessibilityNodeInfos = getNodeInfosByViewId(viewId)
     if (accessibilityNodeInfos.isNullOrEmpty()) return
@@ -133,4 +137,25 @@ fun AccessibilityService.gestureViewCenter(
 
 fun AccessibilityService.back() {
     performGlobalAction(AccessibilityService.GLOBAL_ACTION_BACK)
+}
+
+suspend fun AccessibilityService.getNodeInfosByViewId(viewId: String, interval: Long, times: Int): MutableList<AccessibilityNodeInfo>? {
+    for(i in 0 until  times) {
+        val data = getNodeInfosByViewId(viewId)
+        if (data.isNullOrEmpty().not()) {
+            return data
+        }
+        delay(interval)
+    }
+    return null
+}
+
+fun AccessibilityService.gesturePath(path: Path, startTime: Long = 200L, duration: Long = 100L, interval: Long, times: Int) {
+    GlobalScope.launch {
+        for(i in 0 until  times) {
+            LogUtils.d("times:$i");
+            gesturePath(path, startTime)
+            delay(interval)
+        }
+    }
 }

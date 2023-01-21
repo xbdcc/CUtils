@@ -48,9 +48,7 @@ abstract class CBaseAccessibilityService : AccessibilityService() {
                 }
             }
             AccessibilityEvent.TYPE_VIEW_CLICKED -> {
-                if (isMonitorContent) {
-                    monitorViewClicked(event)
-                }
+                monitorViewClicked(event)
             }
         }
     }
